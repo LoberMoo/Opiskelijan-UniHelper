@@ -3,3 +3,4 @@
 Features:
 - Slop
 - A lot of Slop
+- A gitignore!
