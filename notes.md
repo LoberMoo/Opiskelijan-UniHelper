@@ -1,6 +1,6 @@
 How 2 merge with main (this tutorial is for BNQ2k):
 
-first add all changes and commit them "git commit -m "(commit message)""
+first add all changes and commit them "git add ." -> "git commit -m "(commit message)""
 
 push the changes "git push origin (branch name you're working on)"
 
