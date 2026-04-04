@@ -12,5 +12,4 @@
 
 ### Tekijät
     LoberMoo 
-    & 
     BNQ2k
