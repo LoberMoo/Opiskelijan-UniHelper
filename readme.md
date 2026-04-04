@@ -4,11 +4,13 @@
 
 
 ### Ominaisuudet:
-- Slop
-- A lot of Slop
-- A gitignore!
+    - Slop
+    - A lot of Slop
+    - A gitignore!
 
 ### Testaus
 
 ### Tekijät
-LoberMoo & BNQ2k
+    LoberMoo 
+    & 
+    BNQ2k
