@@ -1,14 +1,14 @@
-### Hyvinvointi ja Terveysteknologian Ryhmätyön Github repositorio
+## Hyvinvointi ja Terveysteknologian Ryhmätyön Github repositorio
 
     Opiskelijan-UniHelper
 
 
-# Ominaisuudet:
+### Ominaisuudet:
 - Slop
 - A lot of Slop
 - A gitignore!
 
-# Testaus
+### Testaus
 
-# Tekijät
+### Tekijät
 LoberMoo & BNQ2k
