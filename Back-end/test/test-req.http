@@ -1,0 +1,94 @@
+# Test HTTP requests
+### for use with: REST Client extension
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE3LCJrdWJpb3NJZFRva2VuIjoiZXlKcmFXUWlPaUpRVkVSUlVHWkxialUyYlhCNVJVOXBjSFZ4T0dSRlVEQlBlWGxKTVdoMVdsUXdNVkpWZWtkWFVTdFJQU0lzSW1Gc1p5STZJbEpUTWpVMkluMC5leUpoZEY5b1lYTm9Jam9pZVVKWE5IaGxNMTlQTlZGV09EZDNXbkZpVFhWa2R5SXNJbk4xWWlJNkltUTFNemMzWXpCbExXRTJNRGt0TkdRMFl5MWlNemszTFdVellqZGlNR1EwWTJWaU5pSXNJbVZ0WVdsc1gzWmxjbWxtYVdWa0lqcDBjblZsTENKcGMzTWlPaUpvZEhSd2N6cGNMMXd2WTI5bmJtbDBieTFwWkhBdVpYVXRkMlZ6ZEMweExtRnRZWHB2Ym1GM2N5NWpiMjFjTDJWMUxYZGxjM1F0TVY5MVVXMUJaelExZUhraUxDSmpiMmR1YVhSdk9uVnpaWEp1WVcxbElqb2laRFV6Tnpkak1HVXRZVFl3T1MwMFpEUmpMV0l6T1RjdFpUTmlOMkl3WkRSalpXSTJJaXdpWjJsMlpXNWZibUZ0WlNJNklrcHZibWtpTENKaGRXUWlPaUl5Y2pnek9HVnZhV1F4ZG1WaU1IRnVjV2R1T0RGeFlYVnRNQ0lzSW1WMlpXNTBYMmxrSWpvaU16Y3dOall4TkRVdE5UUXpPQzAwWldRMUxUZ3pPR1V0T0RFd09USTFNRE0xTkRaaUlpd2lkRzlyWlc1ZmRYTmxJam9pYVdRaUxDSmhkWFJvWDNScGJXVWlPakUzTnpVM01qWTRORGNzSW1WNGNDSTZNVGMzTlRjek1EUTBOeXdpYVdGMElqb3hOemMxTnpJMk9EUTNMQ0ptWVcxcGJIbGZibUZ0WlNJNklrdGhkV3RwYm1WdUlpd2lhblJwSWpvaVpESXlNell5Tm1FdE0ySXlOaTAwT1RSbUxUazFaVFV0T1dGaVkyWXlaR0UwTWpSaklpd2laVzFoYVd3aU9pSnFiMjVwTG10aGRXdHBibVZ1TURaQVoyMWhhV3d1WTI5dEluMC5pZHZZbXdsV0tySUpzVXpuLTZreXRzdUNvbVd3dnBaZ1dJa1dGRFE5OTFjRkI1NjE4cWJIMUFDaVpCU0p0RlVpMHBDV3J0R3JjUnp3VTZ4c0t5Z0dKTno0S1pTVkkxTGFSZ2JXVUlseWZTZGFjWG9oN21XTGQzVjIzNDdVdmlvUEVuV3N2NFJ6UmFJZC1wWS00VkpVZXpsbVBVTEtBQXBOeXRlMTRjd0tyMW94Umc4RFY4dUpiSkNFRjhkQmtxZ0wwd1lPYk5Ra0xqUWgxdDE4RFVIdmtRdzZTUWtFRUJDZjVWNWY4b3RaSF9yaEx5MWZPN3pQT3hHN29fQkNPMmdpcGNSdWpLdXdrRGMwak9rbkxnR3pMYWw1ZTh2N2dVeG5Zc3FaX2NuOWxGaDh6QW9iYl9xb3hQQnl1T2Y0RTk0R0oxRGFRSG1EWlFhQWZEcENLcHdVSGciLCJpYXQiOjE3NzU3MjY4ODQsImV4cCI6MTc3NTgxMzI4NH0.kjzFLJrfzINBE3Y7K5drKYQqc8_poGACyxIAS2KPlhw
+### Add new item
+
+POST http://localhost:3000/api/items
+Content-Type: application/json
+
+{"name": "Six Seven"}
+
+### Put new item
+
+PUT http://localhost:3000/api/items/
+Content-Type: application/json
+
+{"id": 5, "name": "mauku"}
+
+
+### Delete last item
+
+DELETE http://localhost:3000/api/items/:id
+Content-Type: application/json
+
+{"id": 4}
+
+
+### users endpoints
+
+### Get all users
+GET http://localhost:3000/api/users
+Authorization: Bearer {{token}}
+
+### Get username by ID
+GET http://localhost:3000/api/users/2
+
+### Register new user
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+  "username": "megis2",
+  "password": "jessejesseb",
+  "email": "jesse2@example.com"
+}
+
+### User login
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "username": "",
+  "password": ""
+}
+
+### Get user info by token
+GET http://localhost:3000/api/users/me
+Authorization: Bearer {{token}}
+
+### Diary entry endpoints
+
+### Get all entries
+GET http://localhost:3000/api/entries
+Authorization: Bearer: {{token}}
+
+### Get entry by ID
+
+GET http://localhost:3000/api/entries/12
+
+### Delete Entry by ID
+DELETE http://localhost:3000/api/entries/11
+Authorization: Bearer {{token}}
+
+### Post new entry
+
+POST http://localhost:3000/api/entries
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "entry_date": "2026-03-09",
+  "mood": "Mukava päivä",
+  "weight": 76,
+  "sleep_hours": 8,
+  "notes": "Jeejee kivaa"
+}
+
+### Hae Kubios dataa
+GET http://localhost:3000/api/kubios/user-data
+Authorization: Bearer {{token}}
+
+### Get Kubios Info
+
+GET http://localhost:3000/api/kubios/user-info
+Authorization: Bearer {{token}}
