@@ -1,0 +1,179 @@
+@media screen and (max-width: 400px) {
+  * {
+    font-size: 15px;
+  }
+  nav {
+    top: 0;
+    width: 100% !important;
+    float: left !important;
+    transition: top 0.3s !important;
+  }
+
+  nav h3 {
+    display: block;
+  }
+
+  nav li{
+    width: 80% !important;
+    display: block !important;
+  }
+
+  nav a {
+    margin-top: 15px !important;
+  }
+
+  main {
+    width: 75% !important;
+  }
+
+  p {
+    padding: 30px 0px 0px !important;
+  }
+}
+
+.sininen {
+  color:rgb(38, 111, 245);
+}
+
+nav {
+  background-color: black;
+  color: white;
+  border: 2px solid aliceblue;
+  top: 2%;
+  border-radius: 20px;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+}
+
+
+nav li {
+  height: auto;
+  width: 19%;
+  text-decoration: none;
+  display: inline-block;
+}
+
+nav p {
+  text-align: center;
+  background-color: gray;
+  border-radius: 5px;
+  height: 50px;
+}
+
+nav a {
+  display: inline-block;
+  text-align: center;
+  background-color: gray;
+  border-radius: 5px;
+  height: 50px;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+}
+
+nav p:active {
+  text-align: center !important;
+  background-color: rgb(200, 200, 200) !important;
+  padding-bottom: 47px !important;
+  padding-top: 3px !important;
+  text-decoration: none !important;
+}
+
+nav p:hover {
+  text-align: center;
+  background-color: rgb(175, 175, 175);
+  padding-bottom: 47px;
+  padding-top: 3px;
+  text-decoration: none;
+}
+
+nav a:active {
+  text-align: center !important;
+  background-color: rgb(200, 200, 200) !important;
+  padding-bottom: 47px !important;
+  padding-top: 3px !important;
+  text-decoration: none !important;
+}
+
+nav a:hover {
+  text-align: center;
+  background-color: rgb(175, 175, 175);
+  padding-bottom: 47px;
+  padding-top: 3px;
+  text-decoration: none;
+}
+
+section {
+  padding-top: 150px;
+}
+
+  * {
+      font-family: sans-serif;
+      box-sizing: border-box;
+    }
+
+    html {
+      background-image: url("src/img/taustakuva.png");
+      background-repeat: no-repeat;
+      width: 100%;
+    }
+
+    main {
+    position: relative;
+     display: block;
+     margin: 150px auto 0px auto;
+     background-color: gray;
+     border-radius: 5px;
+     width: 50%;
+     height: auto;
+    }
+
+    main h3 {
+      padding-top: 5px;
+      text-align: center;
+    }
+
+    main h2 {
+      text-align: center;
+    }
+
+    #desc {
+      text-align: center;
+      margin-bottom: 30px;
+      color: rgb(199, 199, 199);
+    }
+
+    p {
+      padding-left: 75px;
+      margin-top: 30px;
+      margin-bottom: 2px;
+    }
+    table {
+      padding-left: 75px;
+      margin-top: 16px;
+      margin-bottom: 2px;
+    }
+
+    #bmiskaala {
+      display: block;
+      margin: auto;
+      width: 70%;
+    }
+
+    input {
+      margin-left: 75px;
+      padding: 5px 0px
+    }
+
+    footer {
+      background-color: #296928;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      height: 35px;
+      color: white;
+      text-align: center;
+      margin-top: 150px;
+      padding-top: 7px;
+    }

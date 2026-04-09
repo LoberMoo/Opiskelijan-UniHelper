@@ -1,0 +1,23 @@
+*:focus {
+  outline: 2px solid orchid;
+}
+
+.registerForm {
+  background-color: gray;
+}
+
+.registerForm input {
+  border-radius: 5px;
+  border-left: 4px solid;
+  border-left-color: skyblue;
+}
+
+
+
+.registerForm input:valid {
+  border-left-color: lime;
+}
+
+.registerForm input:invalid {
+  border-left-color: red;
+}

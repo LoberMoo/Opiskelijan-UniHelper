@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/css/style.css">
+  <title>Päiväkirja</title>
+  <style>
+    html {
+      background-image: url("/src/img/taustakuva.png");
+      background-repeat:space;
+    }
+    section {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+    .kortti {
+      /* taika numeroita */
+      flex: 0 1 15%;
+      margin: 2% 5%;
+      height: 270px;
+      background-color: white;
+      border-radius: 4%;
+    }
+
+    .kortti p {
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+      <ul>
+      <li><h3 class="sininen">JoniGym</h3></li>
+      <div>Hei <span class="username"></span>!</div>
+      <li><a id="kotisivu" href="homepage.html">Koti</a></li>
+      <li><a id="bmilaskuri" href="BMI-laskuri.html">Bmi Laskuri</a></li>
+      <li><a id="paivakirja" href="paivakirja.html">Päiväkirja</a></li>
+      <li><p id="yhteystiedot">Yhteystiedot</p></li>
+    </ul>
+  </nav>
+  <div class="Title text" style="margin-top: 250px;">
+    <h2>Päiväkirja</h2>
+  </div>
+  <button class="get_entries">Hae Päiväkirjamerkinnät</button>
+  <button command="show-modal" commandfor="diary_dialog">Poista päiväkirjamerkintä</button>
+  <section class="korttipakka">
+    <div class="kortti">
+      <div class="korttiteksti"></div>
+    </div>
+  </section>
+  <footer>
+    Copyright by Joniboi
+  </footer>
+  <dialog id="diary_dialog">
+    <h2>Päiväkirja entry:n poisto</h2>
+    <form class="get-entry-form">
+				<label for="entryId">Entry ID:</label>
+				<input type="number" id="entryId" name="entryId" placeholder="esim. 1" required />
+			</form>
+    <button commandfor="diary_dialog" command="close">Sulje</button>
+    <button class="deleteEntry">Poista</button>
+  </dialog>
+</body>
+<script type="module" src="/src/js/diary.js"></script>
+</html>

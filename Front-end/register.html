@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      body {
+        display: grid;
+        justify-content: center;
+      }
+
+      form {
+        height: 360px
+      }
+
+      html {
+        background-image: url("src/img/taustakuva.png");
+      }
+    </style>
+</head>
+<body>
+  <form class="registerForm">
+      <label for="username">Username</label>
+      <input
+        id="username"
+        type="text"
+        name="username"
+        placeholder="daisy"
+        minlength="3"
+        required/>
+      <label for="password">Password, minimissään 8 kirjainta isoilla ja pienillä kirjaimilla ja numeroilla.</label>
+      <input
+        id="password"
+        type="password"
+        name="password"
+        placeholder="duck"
+        pattern="^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$"
+        minlength="8"
+        required/>
+      <label for="email">Email, Tarvitsee olla @metropolia.fi päätteinen</label>
+      <input
+        id="email"
+        type="email"
+        name="email"
+        pattern="^[^\s@]+@metropolia\.fi$"
+        placeholder="daisy@metropolia.fi"
+        required/>
+      <input
+        name="submit"
+        type="submit"
+        value="Add User"
+        class="postuser"
+        />
+        <a href="/" style="color:black; font-size: 20px;">Takaisin kirjautumisruutuun</a>
+    </form>
+</body>
+<script type="module" src="/src/js/register.js"></script>
+</html>
