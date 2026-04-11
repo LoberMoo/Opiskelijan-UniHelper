@@ -27,7 +27,7 @@ const renderFruitlist = (items) => {
 
 const getItems = async () => {
 
-  const items = await fetchData('http://localhost:3000/api/items');
+  const items = await fetchData('http://20.250.18.57/api/items');
 
   // Jos kusee jotain backendissä niin tulee virheilmoitus konsoliin tai käyttäjälle.
   if (items.error) {
@@ -51,7 +51,7 @@ const getItemById = async (event) => {
   const idInput = document.getElementById('itemId')
   const itemId = idInput.value;
   console.log(itemId);
-  const apiurl = `http://localhost:3000/api/items/${itemId}`
+  const apiurl = `http://20.250.18.57/api/items/${itemId}`
 
   const options = {
     method: 'GET',
@@ -75,7 +75,7 @@ const deleteItemById = async () => {
   const idInput = document.getElementById('itemId')
   const itemId = idInput.value;
   console.log(itemId);
-  const apiurl = `http://localhost:3000/api/items/${itemId}`
+  const apiurl = `http://20.250.18.57/api/items/${itemId}`
   const confirmed = confirm(`Are juu sure juu want to delete item ${itemId}?`);
 
   if (!itemId) {
@@ -118,7 +118,7 @@ const addItem = async (event) => {
 
   const body = {};
 
-  const apiurl = `http://localhost:3000/api/items/`
+  const apiurl = `http://20.250.18.57/api/items/`
 
   const options = {
     method: 'POST',
@@ -154,7 +154,7 @@ const putItem = async (event) => {
     alert('Id puuttuu, katso listasta mahdollisia ID:tä');
     return;
   }
-  const apiurl = `http://localhost:3000/api/items/${itemId}`
+  const apiurl = `http://20.250.18.57/api/items/${itemId}`
 
 
   const options = {
