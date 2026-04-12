@@ -38,7 +38,7 @@ import { getItems, getItemById, deleteItemById, addItem, putItem, renderItems} f
 const consoleLogItmes = async () => {
 	try {
     // default on get kutsu ilman optiota (valintoja)
-		const response = await fetch('http://20.250.18.57/api/items');
+		const response = await fetch('http://127.0.0.1:3000/api/items');
 		const data = await response.json();
     console.log('Haetaan omasta rajapinnasta/palvelimesta esineitä aeaeaaeeea')
 		console.log(data);

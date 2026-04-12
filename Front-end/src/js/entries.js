@@ -4,7 +4,7 @@ const diaryContainer = document.querySelector('.korttipakka');
 
 
 const getEntries = async (event) => {
-  const url = 'http://20.250.18.57/api/entries';
+  const url = 'http://127.0.0.1:3000/api/entries';
   let headers = {};
   let token = localStorage.getItem('token');
   //console.log(token);
@@ -61,7 +61,7 @@ const deleteEntry = async () => {
   const idInput = document.getElementById('entryId')
   const entryId = idInput.value;
   // console.log(entryId);
-  const apiurl = `http://20.250.18.57/api/entries/${entryId}`
+  const apiurl = `http://127.0.0.1:3000/api/entries/${entryId}`
   const confirmed = confirm(`Oletko varma, että haluat poistaa entry: Entry ID: ${entryId}?`);
   if (token) {
     headers = {
