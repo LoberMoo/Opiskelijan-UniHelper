@@ -27,7 +27,7 @@ const registerUser = async (event) => {
 	};
 
 	// Endpoint
-	const url = 'http://20.250.18.57/api/users';
+	const url = 'http://127.0.0.1:3000/api/users';
 
 	// Options
 	const options = {
@@ -72,7 +72,7 @@ const loginUser = async (event) => {
 	};
 
 	// Endpoint
-	const url = 'http://20.250.18.57/api/users/login';
+	const url = 'http://127.0.0.1:3000/api/users/login';
 
 	// Options
 	const options = {
@@ -109,7 +109,7 @@ const loginUser = async (event) => {
 };
 
 const checkUser = async (event) => {
-	const url = 'http://20.250.18.57/api/users/me';
+	const url = 'http://127.0.0.1:3000/api/users/me';
 	let headers = {};
 	let token = localStorage.getItem('token');
 	console.log(token);
@@ -144,7 +144,7 @@ const deleteUser = async (event) => {
 	console.log(evt.target);
 	console.log(evt.target.attributes['data-id'].value);
 	const id = evt.target.attributes['data-id'].value;
-	const url = `http://20.250.18.57/api/users/${id}`;
+	const url = `http://127.0.0.1:3000/api/users/${id}`;
 	const options = { method: 'DELETE' };
 
 	const answer = confirm(`Are you sure you want to delete user with ID: ${id}`);

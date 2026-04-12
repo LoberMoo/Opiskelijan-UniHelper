@@ -239,3 +239,44 @@ section {
 dialog {
   margin: auto;
 }
+
+.aamufiilis {
+  display: flex;
+  justify-content: right;
+  
+}
+
+.aamufiilis a {
+  text-decoration: none;
+  color: black;
+}
+
+.aamufiilis-ball {
+  height: 60px;
+  width: 60px;
+  background-color: #bbb;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+  align-content: center;
+}
+
+#red {
+  background-color: red;
+}
+
+#orange {
+  background-color: orange;
+}
+
+#yellow {
+  background-color: yellow;
+}
+
+#lime {
+  background-color: lime;
+}
+
+#green {
+  background-color: green;
+}
