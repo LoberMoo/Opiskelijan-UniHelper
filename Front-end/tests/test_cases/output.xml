@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.9.0 on darwin)" generated="2026-04-11T19:15:57.232232" rpa="false" schemaversion="5">
+<suite id="s1" name="Register" source="/Users/benkku/Opiskelijan-UniHelper/Front-end/tests/test_cases/register.robot">
+<test id="s1-t1" name="Test Teardown" line="8">
+<kw name="Close Browser">
+<msg time="2026-04-11T19:15:57.257323" level="FAIL">No keyword with name 'Close Browser' found.</msg>
+<status status="FAIL" start="2026-04-11T19:15:57.257293" elapsed="0.000069">No keyword with name 'Close Browser' found.</status>
+</kw>
+<status status="FAIL" start="2026-04-11T19:15:57.256067" elapsed="0.001730">No keyword with name 'Close Browser' found.</status>
+</test>
+<status status="FAIL" start="2026-04-11T19:15:57.233476" elapsed="0.024626"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Register" id="s1" pass="0" fail="1" skip="0">Register</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-04-11T19:15:57.255693" level="ERROR">Error in file '/Users/benkku/Opiskelijan-UniHelper/Front-end/tests/test_cases/register.robot' on line 2: Resource file 'keywords.robot' does not exist.</msg>
+</errors>
+</robot>
