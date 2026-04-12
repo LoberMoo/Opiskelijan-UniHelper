@@ -2,56 +2,68 @@
 <html lang="fi">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/css/style.css">
-    <title>kotisivu</title>
+    <link rel="stylesheet" href="src/css/homepage.css">
+    <title>UniHelper</title>
   </head>
   <body>
     <nav>
-      <ul>
-        <li><h3 class="sininen">KiviJesse</h3></li>
-        <div>Hei <span class="username"></span>!</div>
-        <li><a id="kotisivu" href="homepage.html">Koti</a></li>
-        <li><a id="bmilaskuri" href="BMI-laskuri.html">Bmi Laskuri</a></li>
-        <li><a id="paivakirja" href="paivakirja.html">Päiväkirja</a></li>
-        <li><p id="yhteystiedot">Yhteystiedot</p></li>
-      </ul>
+      <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('auki')">☰</button>
+      <span style="color:white; font-weight:bold">UniHelper</span>
+      <a href="#">Koti</a>
+      <a href="BMI-laskuri.html">Painoindeksi</a>
+      <a href="paivakirja.html">Päiväkirja</a>
+      <span class="kayttajatunnus">Hei <span class="username"></span>!</span>
     </nav>
 
+    <div class="sidebar" id="sidebar">
+      <ul>
+        <li>PSQI-Kysely</li>
+        <li>Painoindeksi</li>
+        <li>Päiväkirja</li>
+        <li>Historia</li>
+        <li>Palaute</li>
+      </ul>
+    </div>
 
-    <!-- Float continues, clearing -->
-    <section>
-      <h4>Miten
-      <span class="sininen">JesseGym</span>
-      auttaa sinua hyvinvointisi seuraamisessa? No emt, mä vaan koodasin tän sivun.</h4></section>
-      <div class="infobox" style="visibility: visible">
-      <p>Yhteystietomme:</p>
-      <p>Nro: +358 45 1234567</p>
-      <p>Osoite: Esimerkkitie 123</p>
-      <p>Sähköposti: Esimerkki.posti@esim.fi</p>
-      </div>
-    <main>
-      <h2>Otsikko</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam beatae praesentium suscipit quam soluta. Ipsum corrupti molestias quisquam est, quibusdam rem inventore, laboriosam consequatur commodi sed minima accusamus, quis ut?</p>
-      <h3>Arvioi aamufiiliksesi!</h3>
-      <div class="aamufiilis">
-        <a href="#" class="aamufiilis-ball" id="red">5</a>
-        <a href="#" class="aamufiilis-ball" id="orange">4</a>
-        <a href="#" class="aamufiilis-ball" id="yellow">3</a>
-        <a href="#" class="aamufiilis-ball" id="lime">2</a>
-        <a href="#" class="aamufiilis-ball" id="green">1</a>
-      </div>
-    </main>
-    <div class="infobox-mobile" style="visibility: hidden">
-      <p>Yhteystietomme:</p>
-      <p>Nro: +358 45 1234567</p>
-      <p>Osoite: Esimerkkitie 123</p>
-      <p>Sähköposti: Esimerkki.posti@esim.fi</p>
+    <div class="main">
+      <div class="card">
+        <h4>Palautumisprosentti</h4>
+        <div class="bar-outer">
+          <div class="bar-inner"></div>
+          <span class="bar-pct">67%</span>
+        </div>
+        <div class="bar-labels"><span>Lepo</span><span>Stressi</span></div>
       </div>
 
-    <footer>Copyright by Jounin Kyläkauppa</footer>
+      <div class="card">
+        <h4>Unidata</h4>
+      </div>
+
+      <div class="vinkki">
+        <b>Vinkki:</b>
+        <p>Vältä kofeiinia klo 15:00 jälkeen, jotta unenlaatusi paranee.</p>
+        <button>Lisätietoa</button>
+      </div>
+
+      <div class="card">
+        <h4>Arvoi Aamufiilis:</h4>
+        <div class="pallot">
+          <div class="pallo" id="p1" data-testid="punainen" onclick="valitse(this)"></div>
+          <div class="pallo" id="p2" data-testid="oranssi" onclick="valitse(this)"></div>
+          <div class="pallo" id="p3" data-testid="keltainen" onclick="valitse(this)"></div>
+          <div class="pallo" id="p4" data-testid="vaalean_vihreä" onclick="valitse(this)"></div>
+          <div class="pallo" id="p5" data-testid="vihreä" onclick="valitse(this)"></div>
+        </div>
+      </div>
+    </div>
 
     <script type="module" src="/src/js/main.js"></script>
+    <script>
+      function valitse(el) {
+        document.querySelectorAll('.pallo').forEach(p => p.classList.remove('valittu'));
+        el.classList.add('valittu');
+      }
+    </script>
   </body>
 </html>
