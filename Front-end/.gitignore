@@ -24,3 +24,17 @@ dist-ssr
 *.sw?
 .venv
 .env
+
+node_modules
+dist
+dist-ssr
+*.local
+.venv
+log.html
+report.html
+playwright-log.txt
+.venv/
+# Outputs: ignoroi binäärit mutta salli HTML-raportit
+outputs/*.xml
+!outputs/*.html
+outputs/browser/
