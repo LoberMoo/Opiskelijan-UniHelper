@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on darwin)" generated="2026-04-13T10:16:03.719072" rpa="false" schemaversion="5">
+<suite id="s1" name="Aamufiilis" source="/Users/benkku/Opiskelijan-UniHelper/Front-end/tests/test_cases/aamufiilis.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2026-04-13T10:16:03.834226" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/homepage.html'.</msg>
+<arg>http://localhost:5173/homepage.html</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-13T10:16:03.834089" elapsed="2.270071"/>
+</kw>
+<test id="s1-t1" name="Aamufiilis-pallot näkyvissä" line="10">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=p1</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-13T10:16:06.105431" elapsed="0.029170"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=p2</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-13T10:16:06.134873" elapsed="0.011703"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=p3</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-13T10:16:06.146722" elapsed="0.007045"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=p4</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-13T10:16:06.153881" elapsed="0.009015"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=p5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-13T10:16:06.163021" elapsed="0.006699"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-13T10:16:07.170728" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-13T10:16:06.169834" elapsed="1.001468"/>
+</kw>
+<status status="PASS" start="2026-04-13T10:16:06.104705" elapsed="1.067464"/>
+</test>
+<test id="s1-t2" name="Punainen" line="18">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-13T10:16:07.174986" level="INFO">Clicking element 'id=p1'.</msg>
+<arg>id=p1</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T10:16:07.174164" elapsed="0.052181"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-13T10:16:07.897033" level="INFO">Slept 670 milliseconds.</msg>
+<arg>0.67s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-13T10:16:07.226496" elapsed="0.670994"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2026-04-13T10:16:07.914864" level="INFO">${class} = pallo valittu</msg>
+<var>${class}</var>
+<arg>id=p1</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2026-04-13T10:16:07.898585" elapsed="0.016343"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${class}</arg>
+<arg>valittu</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-13T10:16:07.915208" elapsed="0.000641"/>
+</kw>
+<status status="PASS" start="2026-04-13T10:16:07.173052" elapsed="0.742983"/>
+</test>
+<test id="s1-t3" name="Oranssi" line="24">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-13T10:16:07.916764" level="INFO">Clicking element 'id=p2'.</msg>
+<arg>id=p2</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T10:16:07.916571" elapsed="0.030954"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-13T10:16:08.619504" level="INFO">Slept 670 milliseconds.</msg>
+<arg>0.67s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-13T10:16:07.947721" elapsed="0.672298"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2026-04-13T10:16:08.636014" level="INFO">${class} = pallo valittu</msg>
+<var>${class}</var>
+<arg>id=p2</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2026-04-13T10:16:08.620882" elapsed="0.015199"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${class}</arg>
+<arg>valittu</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-13T10:16:08.636371" elapsed="0.000515"/>
+</kw>
+<status status="PASS" start="2026-04-13T10:16:07.916284" elapsed="0.720802"/>
+</test>
+<test id="s1-t4" name="Keltainen" line="30">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-13T10:16:08.637911" level="INFO">Clicking element 'id=p3'.</msg>
+<arg>id=p3</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T10:16:08.637717" elapsed="0.032895"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-13T10:16:09.343183" level="INFO">Slept 670 milliseconds.</msg>
+<arg>0.67s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-13T10:16:08.670779" elapsed="0.672832"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2026-04-13T10:16:09.360651" level="INFO">${class} = pallo valittu</msg>
+<var>${class}</var>
+<arg>id=p3</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2026-04-13T10:16:09.344377" elapsed="0.016341"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${class}</arg>
+<arg>valittu</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-13T10:16:09.361036" elapsed="0.000511"/>
+</kw>
+<status status="PASS" start="2026-04-13T10:16:08.637365" elapsed="0.724379"/>
+</test>
+<test id="s1-t5" name="Vaaleanvihree" line="36">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-13T10:16:09.362578" level="INFO">Clicking element 'id=p4'.</msg>
+<arg>id=p4</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T10:16:09.362344" elapsed="0.035704"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-13T10:16:10.070468" level="INFO">Slept 670 milliseconds.</msg>
+<arg>0.67s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-13T10:16:09.398218" elapsed="0.672653"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2026-04-13T10:16:10.086415" level="INFO">${class} = pallo valittu</msg>
+<var>${class}</var>
+<arg>id=p4</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2026-04-13T10:16:10.071739" elapsed="0.014748"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${class}</arg>
+<arg>valittu</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-13T10:16:10.086773" elapsed="0.000508"/>
+</kw>
+<status status="PASS" start="2026-04-13T10:16:09.361994" elapsed="0.725486"/>
+</test>
+<test id="s1-t6" name="Vihreä" line="42">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-13T10:16:10.088227" level="INFO">Clicking element 'id=p5'.</msg>
+<arg>id=p5</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T10:16:10.088026" elapsed="0.032808"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-13T10:16:10.792054" level="INFO">Slept 670 milliseconds.</msg>
+<arg>0.67s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-13T10:16:10.121044" elapsed="0.671476"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2026-04-13T10:16:10.807956" level="INFO">${class} = pallo valittu</msg>
+<var>${class}</var>
+<arg>id=p5</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2026-04-13T10:16:10.793318" elapsed="0.014699"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${class}</arg>
+<arg>valittu</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-13T10:16:10.808710" elapsed="0.000531"/>
+</kw>
+<status status="PASS" start="2026-04-13T10:16:10.087710" elapsed="0.721728"/>
+</test>
+<test id="s1-t7" name="Lopullinen valinta" line="48">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-13T10:16:10.810194" level="INFO">Clicking element 'id=p1'.</msg>
+<arg>id=p1</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T10:16:10.809999" elapsed="0.029401"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-13T10:16:11.841676" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-13T10:16:10.839646" elapsed="1.002398"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-13T10:16:11.843519" level="INFO">Clicking element 'id=p5'.</msg>
+<arg>id=p5</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T10:16:11.842759" elapsed="0.039231"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-13T10:16:12.882868" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-13T10:16:11.882250" elapsed="1.001028"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2026-04-13T10:16:12.901253" level="INFO">${class_p5} = pallo valittu</msg>
+<var>${class_p5}</var>
+<arg>id=p5</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2026-04-13T10:16:12.884029" elapsed="0.017291"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2026-04-13T10:16:12.912546" level="INFO">${class_p1} = pallo</msg>
+<var>${class_p1}</var>
+<arg>id=p1</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2026-04-13T10:16:12.901628" elapsed="0.010965"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${class_p5}</arg>
+<arg>valittu</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-13T10:16:12.912801" elapsed="0.000398"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${class_p1}</arg>
+<arg>valittu</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2026-04-13T10:16:12.913343" elapsed="0.000277"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-13T10:16:14.915188" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-13T10:16:12.913730" elapsed="2.002015"/>
+</kw>
+<status status="PASS" start="2026-04-13T10:16:10.809681" elapsed="4.106918"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-04-13T10:16:14.918403" elapsed="0.078096"/>
+</kw>
+<doc>Aamufiilis-toiminnon testit</doc>
+<status status="PASS" start="2026-04-13T10:16:03.719712" elapsed="11.276884"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Aamufiilis" id="s1" pass="7" fail="0" skip="0">Aamufiilis</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
