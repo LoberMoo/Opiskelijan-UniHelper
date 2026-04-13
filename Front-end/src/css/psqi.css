@@ -65,14 +65,6 @@ th {
     text-align: center;
 }
 
-td {
-    border: 1px solid #999;
-    padding: 4px;
-    background-color: #d5d5d5;
-    text-align: center;
-}
-
-
 .nav {
     display: flex;
     justify-content: space-between;
