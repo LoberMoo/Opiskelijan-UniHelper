@@ -1,3 +1,5 @@
+/* Voi jeesus että tää on vibecoodattu :Sob: */
+
 body { background: #ffffff; font-family: sans-serif; margin: 0; }
 
 nav { background: black; padding: 10px; display: flex; gap: 15px; align-items: center; }
@@ -8,7 +10,14 @@ nav a { color: orange; background: whitesmoke; padding: 8px 14px; border-radius:
 .sidebar { background: black; color: white; width: 167px; padding: 27px; position: fixed; top: 48px; left: 0; height: 100%; display: none; }
 .sidebar.auki { display: block; }
 .sidebar ul { padding-left: 18px; }
-.sidebar li { margin: 10px 0; cursor: pointer; }
+.sidebar li {
+    margin: 10px 0;
+    cursor: pointer;
+}
+.sidebar a {
+    text-decoration: none;
+    color:white;
+}
 
 .main { padding: 20px; max-width: 600px; margin: 0 auto; }
 .card { background: rgb(167, 167, 167); border-radius: 8px; padding: 16px; margin-bottom: 20px; }
