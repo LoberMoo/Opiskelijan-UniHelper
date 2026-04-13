@@ -1,39 +1,142 @@
 /* Voi jeesus että tää on vibecoodattu :Sob: */
 
-body { background: #ffffff; font-family: sans-serif; margin: 0; }
+body {
+    background: #ffffff;
+    font-family: sans-serif;
+    margin: 0;
+}
 
-nav { background: black; padding: 10px; display: flex; gap: 15px; align-items: center; }
-nav a { color: orange; background: whitesmoke; padding: 8px 14px; border-radius: 5px; }
-.hamburger { background: none; color: orange; font-size: 22px; }
-.kayttajatunnus { margin-left: auto; color: white; }
+nav {
+    background: black;
+    padding: 10px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
 
-.sidebar { background: black; color: white; width: 167px; padding: 27px; position: fixed; top: 48px; left: 0; height: 100%; display: none; }
-.sidebar.auki { display: block; }
-.sidebar ul { padding-left: 18px; }
+nav a {
+    color: orange;
+    background: whitesmoke;
+    padding: 8px 14px;
+    border-radius: 5px;
+}
+
+.hamburger {
+    background: none;
+    color: orange;
+    font-size: 22px;
+}
+
+.kayttajatunnus {
+    margin-left: auto;
+    color: white;
+}
+
+.sidebar {
+    background: black;
+    color: white;
+    width: 167px;
+    padding: 27px;
+    position: fixed;
+    top: 48px;
+    left: 0;
+    height: 100%;
+    display: none;
+}
+
+.sidebar.auki {
+    display: block;
+}
+
+.sidebar ul {
+    padding-left: 18px;
+}
+
 .sidebar li {
     margin: 10px 0;
     cursor: pointer;
 }
+
 .sidebar a {
     text-decoration: none;
     color:white;
 }
 
-.main { padding: 20px; max-width: 600px; margin: 0 auto; }
-.card { background: rgb(167, 167, 167); border-radius: 8px; padding: 16px; margin-bottom: 20px; }
+.main { padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-.bar-outer { background: #e55; border-radius: 20px; height: 26px; position: relative; overflow: hidden; }
-.bar-inner { background: #4c4; width: 67%; height: 100%; }
-.bar-pct { position: absolute; top: 5px; left: 50%; color: white; }
-.bar-labels { display: flex; justify-content: space-between; font-size: 11px; color: #888; }
+.card { background: rgb(167, 167, 167);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
 
-.vinkki { background: #ffeb99; border-radius: 8px; padding: 14px; margin-bottom: 14px; }
-.vinkki button { background: rgb(80, 80, 255); color: white; border: none; border-radius: 20px; padding: 6px 18px; display: block; margin: 8px auto 0; }
+.bar-outer {
+    background: #e55;
+    border-radius: 20px;
+    height: 26px;
+    position: relative;
+    overflow: hidden;
+}
 
-.pallot { display: flex; gap: 12px; margin-top: 10px; }
-.pallo { width: 67px; height: 67px; border-radius: 50%; cursor: pointer; border: 3px solid transparent; }
-.pallo:hover { border-color: #367; }
-.pallo.valittu { border-color: #000; }
+.bar-inner {
+    background: #4c4;
+    width: 67%;
+    height: 100%;
+}
+
+.bar-pct {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    color: white;
+}
+
+.bar-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px; color: #888;
+}
+
+.vinkki { background: #ffeb99;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 14px;
+}
+
+.vinkki button {
+    background: rgb(80, 80, 255);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 18px;
+    display: block;
+    margin: 8px auto 0;
+}
+
+.pallot {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.pallo { width: 67px;
+    height: 67px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent;
+}
+
+.pallo:hover {
+    border-color: #367;
+}
+
+.pallo.valittu {
+    border-color: #000;
+}
+
 #p1 { background: red; } 
 #p2 { background: orange; }
 #p3 { background: yellow; }
