@@ -137,8 +137,22 @@ nav a {
     border-color: #000;
 }
 
-#p1 { background: red; } 
-#p2 { background: orange; }
-#p3 { background: yellow; }
-#p4 { background: lightgreen; } 
-#p5 { background: green; }
+#p1 {
+    background: red;
+} 
+
+#p2 {
+    background: orange;
+}
+
+#p4 {
+    background: lightgreen;
+} 
+
+#p3 {
+    background: yellow;
+}
+
+#p5 {
+    background: green;
+}
