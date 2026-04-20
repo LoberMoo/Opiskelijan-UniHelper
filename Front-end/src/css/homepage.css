@@ -2,7 +2,7 @@
 
 body {
     background: #ffffff;
-    font-family: sans-serif;
+    font-family: Arial;
     margin: 0;
 }
 
@@ -127,7 +127,11 @@ nav a {
     border-radius: 50%;
     cursor: pointer;
     border: 3px solid transparent;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: underline;
+    color: rgba(0,0,0,0.5);
 }
 
 .pallo:hover {
