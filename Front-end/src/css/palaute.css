@@ -7,9 +7,9 @@
 
 .lomake textarea { width: 100%; height: 140px; padding: 8px; font-size: 14px; border: none; border-radius: 4px; resize: none; box-sizing: border-box; }
 
-.tiedosto-nappi { background: greenyellow; padding: 7px 12px; border-radius: 4px; cursor: pointer; font-size: 14px;  }
+.tiedosto-nappi { background: #b6f5a0; padding: 7px 12px; border-radius: 4px; cursor: pointer; font-size: 14px;  }
 
 .lomake button { background: #4a90e2; color: white; border: none; padding: 8px 20px; border-radius: 4px; cursor: pointer; font-size: 14px; }
 
-.popup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #b6f5a0; border-radius: 8px; padding: 30px 40px; text-align: center; z-index: 99; }
+.popup { position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); background: #b6f5a0; border-radius: 8px; padding: 80px 90px; text-align: center; }
 .popup button { background: #ccc; color: black; border: none; padding: 6px 16px; border-radius: 4px; cursor: pointer; margin-top: 14px; }
