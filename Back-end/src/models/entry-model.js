@@ -1,9 +1,10 @@
 import promisePool from '../utils/database.js';
 
-const listAllEntries = async (id) => {
+const listAllEntries = async (user_id) => {
+  console.log(user_id)
   try {
     const sql = 'SELECT * FROM diaryentries WHERE user_id = ?;'
-    const [rows] = await promisePool.execute(sql, [id]);
+    const [rows] = await promisePool.execute(sql, [user_id]);
     return rows;
   } catch (e) {
     console.error('error', e.message);

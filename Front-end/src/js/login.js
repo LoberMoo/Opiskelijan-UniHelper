@@ -3,7 +3,6 @@ import '../css/forms.css';
 import '../css/snackbar.css';
 import { fetchData } from './fetch.js';
 
-console.log('Moi luodaan nyt tokeneita ja kirjaudutaan sisään');
 
 // Esimerkin takia haut ovat nyt suoraan tässä tiedostossa, jotta harjoitus ei sekoita
 // teidän omaa projektin rakennetta
@@ -96,7 +95,7 @@ const loginUser = async (event) => {
 	if (response.message) {
 		console.log(response.message, 'success');
 		localStorage.setItem('token', response.token);
-		localStorage.setItem('name', response.user.username);
+		localStorage.setItem('name', username);
 		logResponse('loginResponse', `localStorage set with token value: ${response.token}`);
     alert(`Tervetuloa ${username}!`);
 		setTimeout(function () {

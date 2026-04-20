@@ -1,7 +1,7 @@
  /**
   * Authentication resource controller using Kubios API for login
  * @module controllers/auth-controller
- * @author benjale <benjamin.lepisto@metropolia.fi>
+ * @author
  * @requires jsonwebtoken
  * @requires bcryptjs
  * @requires dotenv
@@ -146,7 +146,8 @@
      // Include kubiosIdToken in the auth token used in this app
      // NOTE: What is the expiration time of the Kubios token?
      const token = jwt.sign(
-       {userId: localUserId, kubiosIdToken},
+      //  {userId: localUserId, kubiosIdToken},
+      {user_id: localUserId, kubiosIdToken},
        process.env.JWT_SECRET,
        {
          expiresIn: process.env.JWT_EXPIRES_IN,
@@ -172,7 +173,8 @@
  * @return {object} user info
  */
  const getMe = async (req, res) => {
-   const user = await getUserbyId(req.user.userId);
+  //  const user = await getUserbyId(req.user.userId);
+  const user = await getUserbyId(req.user.user_id);
    res.json({user, kubios_token: req.user.kubiosIdToken});
  };
 

@@ -3,57 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="src/css/style.css">
+  <link rel="stylesheet" href="src/css/homepage.css">
   <title>UniHelper</title>
   <style>
-    html {
-      background-image: url("/src/img/taustakuva.png");
-      background-repeat:space;
-    }
-    section {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      flex-wrap: wrap;
-    }
-    .kortti {
-      /* taika numeroita */
-      flex: 0 1 15%;
-      margin: 2% 5%;
-      height: 270px;
-      background-color: white;
-      border-radius: 4%;
+
+    .dropdownbutton {
+    background-color: gray;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
     }
 
-    .kortti p {
-      font-size: 15px;
+
+    .merkinta {
+    position: relative;
+    display: inline-block;
     }
+
+
+  .area {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    z-index: 1;
+    padding-left: 20px;
+  }
+
+
+  .area a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  #long {
+    background-color: gray;
+  }
+
+
+  .area a:hover {background-color: #ddd;}
+
+
+  .show {display: block;}
+
   </style>
 </head>
 <body>
   <nav>
+      <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('auki')">☰</button>
+      <span style="color:white; font-weight:bold">UniHelper</span>
+      <span class="kayttajatunnus">Hei <span class="username"></span>!</span>
+    </nav>
+
+    <div class="sidebar" id="sidebar" style="z-index: 2;">
       <ul>
-      <li><h3 class="sininen">JoniGym</h3></li>
-      <div>Hei <span class="username"></span>!</div>
-      <li><a id="kotisivu" href="homepage.html">Koti</a></li>
-      <li><a id="bmilaskuri" href="BMI-laskuri.html">Bmi Laskuri</a></li>
-      <li><a id="paivakirja" href="paivakirja.html">Päiväkirja</a></li>
-      <li><p id="yhteystiedot">Yhteystiedot</p></li>
-    </ul>
-  </nav>
-  <div class="Title text" style="margin-top: 250px;">
+        <li><a href="homepage.html">Koti</a></li>
+        <li><a href="PSQI.html">PSQI-Kysely</a></li>
+        <li><a href="BMI-laskuri.html">Painoindeksi</a></li>
+        <li><a href="#">Päiväkirja</a></li>
+        <li>Historia</li>
+        <li>Palaute</li>
+      </ul>
+    </div>
+  <div class="Title text" style="margin-top: 25px;">
     <h2>Päiväkirja</h2>
   </div>
   <button class="get_entries">Hae Päiväkirjamerkinnät</button>
   <button command="show-modal" commandfor="diary_dialog">Poista päiväkirjamerkintä</button>
-  <section class="korttipakka">
-    <div class="kortti">
-      <div class="korttiteksti"></div>
+
+  <br>
+  <br>
+
+  <section class="merkinta">
+    <button class="dropdownbutton">Diary1</button>
+      <div id="dropdown" class="area">
+        <h3>Mockdata</h3>
+        <p id="long">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis laboriosam, itaque architecto incidunt quibusdam, hic adipisci eos repellat eligendi minus aliquid? Molestias, facere? Necessitatibus rerum id at corrupti? Facilis, itaque!</p>
+      </div>
     </div>
   </section>
-  <footer>
-    Copyright by Joniboi
-  </footer>
+  
+  
   <dialog id="diary_dialog">
     <h2>Päiväkirja entry:n poisto</h2>
     <form class="get-entry-form">

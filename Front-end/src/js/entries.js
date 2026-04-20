@@ -1,6 +1,6 @@
 import { fetchData } from "./fetch";
 
-const diaryContainer = document.querySelector('.korttipakka');
+const diaryContainer = document.querySelector('.merkinta');
 
 
 const getEntries = async (event) => {
@@ -37,10 +37,10 @@ const getEntries = async (event) => {
     // console.log(entry);
 
     const card = document.createElement('div');
-    card.classList.add('kortti');
+    card.classList.add('merkinta');
 
     const pvKirjaTiedot = document.createElement('div');
-    pvKirjaTiedot.classList.add('korttiteksti');
+    pvKirjaTiedot.classList.add('area');
     pvKirjaTiedot.innerHTML = `<p>Päivämäärä: ${entry.created_at}</p>
     <p>Olotila: ${entry.mood}</p>
     <p>Paino: ${entry.weight}kg </p>
