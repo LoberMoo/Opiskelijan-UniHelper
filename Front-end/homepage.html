@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fi">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,7 +17,7 @@
       <ul>
         <li><a href="#">Koti</a></li>
         <li><a href="PSQI.html">PSQI</a></li>
-        <li><a href="BMI-laskuri.html">Painoindeksi</a></li>
+        <li><a href="BMI.html">Painoindeksi</a></li>
         <li><a href="paivakirja.html">Päiväkirja</a></li>
         <li>Historia</li>
         <li><a href="palaute.html">Palaute</a></li>
@@ -43,24 +43,24 @@
         <p>Vältä kofeiinia klo 15:00 jälkeen, jotta unenlaatusi paranee.</p>
         <button>Lisätietoa</button>
       </div>
-
-      <div class="card">
-        <h4>Arvoi Aamufiilis:</h4>
-        <div class="pallot">
-          <div class="pallo" id="p1" data-testid="punainen" onclick="valitse(this)">1</div>
-          <div class="pallo" id="p2" data-testid="oranssi" onclick="valitse(this)">2</div>
-          <div class="pallo" id="p3" data-testid="keltainen" onclick="valitse(this)">3</div>
-          <div class="pallo" id="p4" data-testid="vaalean_vihreä" onclick="valitse(this)">4</div>
-          <div class="pallo" id="p5" data-testid="vihreä" onclick="valitse(this)">5</div>
-        </div>
-      </div>
+  <div class="card">
+    <h4>Arvoi Aamufiilis:</h4>
+    <div class="pallot">
+      <div class="pallo" id="p1" data-testid="punainen" onclick="valitse(this)">1</div>
+      <div class="pallo" id="p2" data-testid="oranssi" onclick="valitse(this)">2</div>
+      <div class="pallo" id="p3" data-testid="keltainen" onclick="valitse(this)">3</div>
+      <div class="pallo" id="p4" data-testid="vaalean_vihreä" onclick="valitse(this)">4</div>
+      <div class="pallo" id="p5" data-testid="vihreä" onclick="valitse(this)">5</div>
     </div>
+    <p id="fiilis-viesti"></p>
+  </div>
 
     <script type="module" src="/src/js/homepage.js"></script>
     <script>
       function valitse(el) {
         document.querySelectorAll('.pallo').forEach(p => p.classList.remove('valittu'));
         el.classList.add('valittu');
+        document.getElementById('fiilis-viesti').textContent = 'Vastaus tallennetaan!'
       }
     </script>
   </body>

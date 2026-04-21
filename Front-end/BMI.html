@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniHelper</title>
+  <link rel="stylesheet" href="src/css/homepage.css">
+  <link rel="stylesheet" href="src/css/bmi.css">
+</head>
+<body>
+  <nav>
+    <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('auki')">☰</button>
+    <span style="color:white; font-weight:bold">UniHelper</span>
+    <span class="kayttajatunnus">Hei <span class="username"></span>!</span>
+  </nav>
+
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="homepage.html">Koti</a></li>
+      <li><a href="PSQI.html">PSQI</a></li>
+      <li><a href="BMI-laskuri.html">Painoindeksi</a></li>
+      <li><a href="paivakirja.html">Päiväkirja</a></li>
+      <li>Historia</li>
+      <li><a href="palaute.html">Palaute</a></li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <h2 style="text-align:center; margin-bottom:16px">Painoindeksi</h2>
+
+    <img src="/src/img/bmiskaala.png" style="width:100%; border-radius:6px; margin-bottom:20px">
+
+    <div class="card">
+      <div class="laskuri-rivi">
+        <div class="kentat">
+          <p>Pituus <input type="number" id="height" placeholder="cm"> cm</p>
+          <p>Paino <input type="number" id="weight" placeholder="kg"> kg</p>
+          <div style="display:flex; align-items:center; gap:10px; margin-top:10px">
+            <button onclick="laskeBMI()">Laske</button>
+            <div class="info-pallo">i
+              <div class="info-tooltip">Ylipaino heikentää unenlaatua ja lisää uniapnean riskiä. Painoindeksin seuranta auttaa tunnistamaan terveysriskit ajoissa.</div>
+            </div>
+          </div>
+        </div>
+        <div class="tulos-alue">
+          <p id="bmiTulos" style="font-size:22px; font-weight:bold">BMI = xx.x</p>
+          <p id="bmiLuokka" style="font-size:14px; color:#333"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/js/bmi.js"></script>
+  <script>
+    function laskeBMI() {
+  const h = document.getElementById('height').value / 100
+  const w = document.getElementById('weight').value
+  if (!h || !w) return
+  const bmi = (w / (h * h)).toFixed(1)
+  document.getElementById('bmiTulos').textContent = 'BMI = ' + bmi
+  const el = document.getElementById('bmiLuokka')
+  el.className = ''
+  if (bmi < 18.5) { el.textContent = 'Alipaino'; el.classList.add('alipaino') }
+  else if (bmi < 25) { el.textContent = 'Normaali paino'; el.classList.add('normaali') }
+  else if (bmi < 30) { el.textContent = 'Ylipaino'; el.classList.add('ylipaino') }
+  else { el.textContent = 'Merkittävä ylipaino'; el.classList.add('merkittava') }
+}
+      </script>
+</body>
+</html>
