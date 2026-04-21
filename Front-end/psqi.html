@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>UniHelper</title>
-
+    <link rel="stylesheet" href="src/css/homepage.css">
     <link rel="stylesheet" href="src/css/psqi.css">
 
     <style>
@@ -90,7 +90,7 @@
     <li><a href="BMI-laskuri.html">Painoindeksi</a></li>
     <li><a href="paivakirja.html">Päiväkirja</a></li>
     <li>Historia</li>
-    <li>Palaute</li>
+    <li><a href="palaute.html">Palaute</a></li>
   </ul>
 </div>
 
@@ -130,15 +130,141 @@
                 <button class="btn-next" onclick="goTo(2)">Seuraava</button>
             </div>
         </div>
-        <!--SIVU 2-->
 
+        <!--SIVU 2-->
+        <div class="page" id="page2">
+            <h3>Osa 2 / 3 Unihäiriöt</h3>
+            <p class="subtitle">Kuinka usein viimeisen kuukauden aikana?</p>
+
+            <table width="100%">
+                <tr>
+                    <th></th>
+                    <th>Ei koskaan</th>
+                    <th>Alle kerran/vko</th>
+                    <th>1-2 kertaa/vko</th>
+                    <th>3+ kertaa/vko</th>
+                </tr>
+                <tr>
+                    <td>Et saanut unta 30 min sisällä</td>
+                    <td><input type="radio" name="b1" value="0"></td>
+                    <td><input type="radio" name="b1" value="1"></td>
+                    <td><input type="radio" name="b1" value="2"></td>
+                    <td><input type="radio" name="b1" value="3"></td>
+                </tr>
+                <tr>
+                    <td>Heräsit yöllä tai liian aikaisin</td>
+                    <td><input type="radio" name="b2" value="0"></td>
+                    <td><input type="radio" name="b2" value="1"></td>
+                    <td><input type="radio" name="b2" value="2"></td>
+                    <td><input type="radio" name="b2" value="3"></td>
+                </tr>
+                <tr>
+                    <td>Jouduit käymään vessassa</td>
+                    <td><input type="radio" name="b3" value="0"></td>
+                    <td><input type="radio" name="b3" value="1"></td>
+                    <td><input type="radio" name="b3" value="2"></td>
+                    <td><input type="radio" name="b3" value="3"></td>
+                </tr>
+                <tr>
+                    <td>Hengitysvaikeudet</td>
+                    <td><input type="radio" name="b4" value="0"></td>
+                    <td><input type="radio" name="b4" value="1"></td>
+                    <td><input type="radio" name="b4" value="2"></td>
+                    <td><input type="radio" name="b4" value="3"></td>
+                </tr>
+                <tr>
+                    <td>Kuorsaaminen</td>
+                    <td><input type="radio" name="b5" value="0"></td>
+                    <td><input type="radio" name="b5" value="1"></td>
+                    <td><input type="radio" name="b5" value="2"></td>
+                    <td><input type="radio" name="b5" value="3"></td>
+                </tr>
+                <tr>
+                    <td>Paleleminen</td>
+                    <td><input type="radio" name="b6" value="0"></td>
+                    <td><input type="radio" name="b6" value="1"></td>
+                    <td><input type="radio" name="b6" value="2"></td>
+                    <td><input type="radio" name="b6" value="3"></td>
+                </tr>
+                <tr>
+                    <td>Kuumuus</td>
+                    <td><input type="radio" name="b7" value="0"></td>
+                    <td><input type="radio" name="b7" value="1"></td>
+                    <td><input type="radio" name="b7" value="2"></td>
+                    <td><input type="radio" name="b7" value="3"></td>
+                </tr>
+            </table>
+
+            <div class="nav">
+                <button class="btn-prev" onclick="goTo(1)">Edellinen</button>
+                <span>Sivu 2 / 3</span>
+                <button class="btn-next" onclick="goTo(3)">Seuraava</button>
+            </div>
+        </div>
+
+        <!--SIVU 3-->
+        <div class="page" id="page3">
+            <h3>Osa 3 / 3 Oma arvio</h3>
+            <p class="subtitle">Vastaa viimeisen kuukauden ajalta.</p>
+
+            <div class="question">
+                <label>Miten arvioit unesi laadun?</label>
+                <select id="k5">
+                    <option value="0">Erittäin hyvä</option>
+                    <option value="1">Melko hyvä</option>
+                    <option value="2">Melko huono</option>
+                    <option value="3">Erittäin huono</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>Kuinka usein otit unilääkettä?</label>
+                <select id="k6">
+                    <option value="0">Ei koskaan</option>
+                    <option value="1">Alle kerran viikossa</option>
+                    <option value="2">1-2 kertaa viikossa</option>
+                    <option value="3">3+ kertaa viikossa</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>Kuinka usein oli vaikeuksia pysyä hereillä?</label>
+                <select id="k7">
+                    <option value="0">Ei lainkaan</option>
+                    <option value="1">Vähän</option>
+                    <option value="2">Jonkin verran</option>
+                    <option value="3">Paljon</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>Kuinka suuri ongelma oli innostuksen puute?</label>
+                <select id="k8">
+                    <option value="0">Ei lainkaan</option>
+                    <option value="1">Vähän</option>
+                    <option value="2">Jonkin verran</option>
+                    <option value="3">Paljon</option>
+                </select>
+            </div>
+
+            <div class="nav">
+                <button class="btn-prev" onclick="goTo(2)">Edellinen</button>
+                <span>Sivu 3 / 3</span>
+                <button class="btn-next" onclick="laske()">Lopeta</button>
+            </div>
+        </div>
+
+        <!--pisteytykset-->
+        <div class="page" id="pageValmis">
+            <h3>Kysely valmis!</h3>
+            <p>PSQI-pisteesi: <strong id="tulos"></strong></p>
+            <p id="tulkinta"></p>
+            <br>
+            <a href="homepage.html">Palaa etusivulle</a>
+        </div>
     </div>
 </div>
-<script>
-function toggleSidebar() {
-    document.getElementById("sidebar").classList.toggle("auki");
-}
-</script>
+<script src="src/js/PSQI.js"></script>
 
 </body>
 </html>

@@ -83,3 +83,6 @@ th {
     background-color: #999;
     color: #111;
 }
+
+.page { display: none; }
+.page.active { display: block; }
