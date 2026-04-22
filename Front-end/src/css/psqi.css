@@ -8,8 +8,8 @@ body {
 
 
 .window {
-    background-color: #c8c8c8;
-    border: 2px solid black;
+    background-color: #ffffff;
+    border: 3px solid black;
     width: 50%;
     padding: 0;
     margin: 90px auto 0; 
@@ -51,17 +51,12 @@ body {
 .question input[type="number"] {
     font-size: 16px;
     padding: 2px 5px;
-    border: 1px solid #888;
-    background: #e0e0e0;
+    border: 1px solid black;
+    background: rgba(255, 181, 44, 0.878);
     width: 130px;
 }
 
-th {
-    background-color: #aaa;
-    border: 1px solid #888;
-    padding: 4px;
-    text-align: center;
-}
+
 
 .nav {
     display: flex;

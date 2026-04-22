@@ -116,6 +116,7 @@ nav a {
     padding: 6px 18px;
     display: block;
     margin: 8px auto 0;
+    cursor: pointer;
 }
 
 .pallot {
