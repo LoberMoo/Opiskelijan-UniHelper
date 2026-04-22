@@ -100,7 +100,7 @@ const loginUser = async (event) => {
     alert(`Tervetuloa ${username}!`);
 		setTimeout(function () {
 			window.location.href = 'homepage.html';
-		}, 3000);
+		}, 0);
 	}
 
 	console.log(response);

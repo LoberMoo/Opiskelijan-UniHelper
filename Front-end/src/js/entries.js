@@ -36,11 +36,19 @@ const getEntries = async (event) => {
   response.forEach((entry) => {
     // console.log(entry);
 
-    const card = document.createElement('div');
-    card.classList.add('merkinta');
+    const card = document.createElement('section');
+    card.classList.add('merkinnat');
+    const nappi = document.createElement('BUTTON');
 
     const pvKirjaTiedot = document.createElement('div');
+    const dropdowncontent = document.createElement('div');
+
+    nappi.textContent = `Entry`;
+    nappi.classList.add('dropdownbutton')
+
+    // pvKirjaTiedot.id = "dropdown";
     pvKirjaTiedot.classList.add('area');
+
     pvKirjaTiedot.innerHTML = `<p>Päivämäärä: ${entry.created_at}</p>
     <p>Olotila: ${entry.mood}</p>
     <p>Paino: ${entry.weight}kg </p>
@@ -49,11 +57,15 @@ const getEntries = async (event) => {
     <p><strong>ID: ${entry.entry_id}</strong></p>`;
 
 
+    card.appendChild(nappi);
     card.appendChild(pvKirjaTiedot);
+    card.appendChild(dropdowncontent);
     diaryContainer.appendChild(card);
 
   });
 };
+
+window.onload = getEntries();
 
 const deleteEntry = async () => {
   let token = localStorage.getItem('token');

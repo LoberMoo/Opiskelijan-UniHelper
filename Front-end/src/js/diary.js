@@ -1,31 +1,41 @@
 import { getEntries, deleteEntry } from "./entries.js";
 
-const getEntriesBtn = document.querySelector('.get_entries');
-getEntriesBtn.addEventListener('click', getEntries);
+// const getEntriesBtn = document.querySelector('.get_entries');
+// getEntriesBtn.addEventListener('click', getEntries);
 
 const deleteEntryButton = document.querySelector('.deleteEntry');
 deleteEntryButton.addEventListener('click', deleteEntry);
 
-const opendropdownbtn = document.querySelector('.dropdownbutton');
-opendropdownbtn.addEventListener('click', opendropdown);
+// const opendropdownbtn = document.querySelector('.dropdownbutton');
+// opendropdownbtn.addEventListener('click', opendropdown);
 
-function opendropdown() {
-  document.getElementById("dropdown").classList.toggle("show");
-}
+// function opendropdown() {
+//   document.getElementById("dropdown").classList.toggle("show");
+// }
 
 
-window.onclick = function(event) {
-  if (!event.target.matches('.dropdownbutton')) {
-    var dropdowns = document.getElementsByClassName("area");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
+// window.onclick = function(event) {
+//   if (!event.target.matches('.dropdownbutton')) {
+//     var dropdowns = document.getElementsByClassName("area");
+//     var i;
+//     for (i = 0; i < dropdowns.length; i++) {
+//       var openDropdown = dropdowns[i];
+//       if (openDropdown.classList.contains('show')) {
+//         openDropdown.classList.remove('show');
+//       }
+//     }
+//   }
+// } 
+
+
+document.addEventListener('click', function(event) {
+  if (event.target.matches('.dropdownbutton')) {
+    const area = event.target.nextElementSibling;
+    area.classList.toggle('show');
+  } else {
+    document.querySelectorAll('.area.show').forEach(el => el.classList.remove('show'));
   }
-} 
+});
 
 
 let name = localStorage.getItem('name');
