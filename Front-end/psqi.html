@@ -9,10 +9,10 @@
 </head>
 
 <body>
-
 <nav>
-    <button class="hamburger" onclick="toggleSidebar()">☰</button>
-    <div class="kayttajatunnus">Käyttäjä</div>
+    <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('auki')">☰</button>
+    <span style="color:white; font-weight:bold">UniHelper</span>
+    <span class="kayttajatunnus">Hei <span class="username"></span>!</span>
 </nav>
 
 <div class="sidebar" id="sidebar">
