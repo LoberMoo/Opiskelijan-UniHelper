@@ -27,9 +27,15 @@
 
   <div class="lomake">
     <div class="ylärivi">
-      <input type="email" placeholder="Sähköpostisi">
-      <label class="tiedosto-nappi"> + Lisää tiedosto<input type="file" style="display:none"></label>
-    </div>
+  <input type="email" id="emailKentta" placeholder="Sähköpostiosoitteesi (vapaaehtoinen)">
+  <label class="tiedosto-nappi"> + Lisää tiedosto
+    <input type="file" id="tiedostoInput" style="display:none">
+  </label>
+  </div>
+  <div id="tiedostoNimi" style="display:none; font-size:13px; margin-top:-4px">
+    <span id="nimiTeksti"></span>
+    <span onclick="poistaTiedosto()" style="cursor:pointer; margin-left:8px; color:red">✕</span>
+  </div>
     <input type="text" placeholder="Aihe">
     <textarea placeholder="Kuvaus"></textarea>
     <div style="text-align:right">
@@ -50,6 +56,20 @@
     document.getElementById('popup').style.display = 'none'
     location.reload()
   }
+  document.getElementById('tiedostoInput').addEventListener('change', function() {
+  if (this.files.length > 0) {
+    document.getElementById('nimiTeksti').textContent = this.files[0].name
+    document.getElementById('tiedostoNimi').style.display = 'block'
+  }
+})
+
+function poistaTiedosto() {
+  document.getElementById('tiedostoInput').value = ''
+  document.getElementById('tiedostoNimi').style.display = 'none'
+}
+
+const email = localStorage.getItem('email')
+if (email) document.getElementById('emailKentta').value = email
 </script>
 </body>
 </html>
