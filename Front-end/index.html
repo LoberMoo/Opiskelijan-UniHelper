@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="stylesheet" href="src/css/register.css">
+    <link rel="stylesheet" href="src/css/user.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
     <style>
@@ -20,21 +20,18 @@
   <body>
 
 
-    <div>
+    <div class="laatikko">
+      <h2>Opiskelijan-UniHelper</h2>
       <form class="loginForm">
-        <label for="username">Username</label>
-        <input type="text" name="username" placeholder="Nimi"/>
-        <label for="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          placeholder="salasana"
-        />
+        <!-- <label for="username">Username</label> -->
+        <input id="email" type="text" name="username" placeholder="Nimi"/>
+        <!-- <label for="password">Password</label> -->
+        <input id="password" type="password" name="password" placeholder="salasana"/>
         <input
           name="submit"
           type="submit"
           value="Login"
-          class="loginform"
+          class="nappi"
         />
       </form>
       <a href="register.html" style="color: black; text-decoration: none; font-size: 20px;">Eikö ole käyttäjää?</a>

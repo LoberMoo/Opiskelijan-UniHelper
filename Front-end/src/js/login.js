@@ -1,6 +1,6 @@
-import '../css/api.css';
-import '../css/forms.css';
-import '../css/snackbar.css';
+// import '../css/api.css';
+// import '../css/forms.css';
+// import '../css/snackbar.css';
 import { fetchData } from './fetch.js';
 
 
@@ -93,11 +93,11 @@ const loginUser = async (event) => {
 	}
 
 	if (response.message) {
-		console.log(response.message, 'success');
+		// console.log(response.message, 'success');
 		localStorage.setItem('token', response.token);
 		localStorage.setItem('name', username);
-		logResponse('loginResponse', `localStorage set with token value: ${response.token}`);
-    alert(`Tervetuloa ${username}!`);
+		// logResponse('loginResponse', `localStorage set with token value: ${response.token}`);
+    	alert(`Tervetuloa ${username}!`);
 		setTimeout(function () {
 			window.location.href = 'homepage.html';
 		}, 0);
@@ -163,9 +163,9 @@ function clearLocalStorage() {
 	logResponse('clearResponse', 'localStorage cleared!');
 }
 
-function logResponse(codeblock, text) {
-	document.getElementById(codeblock).innerText = text;
-}
+// function logResponse(codeblock, text) {
+// 	document.getElementById(codeblock).innerText = text;
+// }
 
 // const registerForm = document.querySelector('.registerForm');
 // registerForm.addEventListener('submit', registerUser);
