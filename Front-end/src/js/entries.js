@@ -48,8 +48,9 @@ const getEntries = async (event) => {
 
     // pvKirjaTiedot.id = "dropdown";
     pvKirjaTiedot.classList.add('area');
-
-    pvKirjaTiedot.innerHTML = `<p>Päivämäärä: ${entry.created_at}</p>
+    const mauku = entry.created_at;
+    const date = mauku.slice(0, 10);
+    pvKirjaTiedot.innerHTML = `<p>Päivämäärä: ${date}</p>
     <p>Olotila: ${entry.mood}</p>
     <p>Paino: ${entry.weight}kg </p>
     <p>Unen määrä: ${entry.sleep_hours} tuntia</p>
@@ -65,11 +66,8 @@ const getEntries = async (event) => {
   });
 };
 
-window.onload = getEntries();
-
 const deleteEntry = async () => {
   let token = localStorage.getItem('token');
-  let headers = {}
   const idInput = document.getElementById('entryId')
   const entryId = idInput.value;
   // console.log(entryId);
@@ -103,4 +101,73 @@ const deleteEntry = async () => {
     await getEntries();
 }
 
-export {getEntries, deleteEntry};
+
+const addentry = async () => {
+  let token = localStorage.getItem('token');
+  let headers = {}
+  const apiurl = `http://127.0.0.1:3000/api/entries/`
+  
+  if (token) {
+    headers = {
+      Authorization: `Bearer ${token}`,
+    };
+  }
+
+  const mood = document.getElementById('mood')
+  const moodval = mood.value
+  console.log(moodval)
+
+  const weight = document.getElementById('weight')
+  const weightval = weight.value
+  console.log(weightval)
+
+  const sleep = document.getElementById('sleep')
+  const sleepval = sleep.value
+  console.log(sleepval)
+
+  const notes = document.getElementById('notes')
+  const notesval = notes.value
+  console.log(notesval)
+
+  let datetime = new Date ()
+
+  let day = datetime.getDate();
+  let month = datetime.getMonth() + 1;
+  if (month < 10) {
+    month = '0' + month;
+  }
+  let year = datetime.getFullYear();
+
+  let pvmr = `${year}-${month}-${day}`
+
+  const bodydata = {
+    entry_date: pvmr,
+    mood: moodval,
+    weight: weightval,
+    sleep_hours: sleepval,
+    notes: notesval,
+  };
+
+  // console.log(bodydata);
+
+  const options = {
+		body: JSON.stringify(bodydata),
+		method: 'POST',
+		headers: {
+			'Content-type': 'application/json',
+      Authorization: `Bearer ${token}`,
+		},
+	};
+
+  const entry = await fetchData(apiurl, options);
+  if (entry.error){
+    console.log(entry.error);
+    alert(`Tapahtui virhe.`);
+    return;
+  }
+  
+  alert('Päiväkirja merkintä lisätty!');
+  await getEntries();
+}
+
+export {getEntries, deleteEntry, addentry};

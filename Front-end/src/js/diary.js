@@ -1,7 +1,13 @@
-import { getEntries, deleteEntry } from "./entries.js";
+import { getEntries, deleteEntry, addentry } from "./entries.js";
 
 // const getEntriesBtn = document.querySelector('.get_entries');
 // getEntriesBtn.addEventListener('click', getEntries);
+
+// Automaattinen diary:n haku, ylhäällä on vanha versio joka haki painamalla nappia.
+window.onload = getEntries();
+
+const addentrybutton = document.querySelector('.add_entry');
+addentrybutton.addEventListener('click', addentry);
 
 const deleteEntryButton = document.querySelector('.deleteEntry');
 deleteEntryButton.addEventListener('click', deleteEntry);
