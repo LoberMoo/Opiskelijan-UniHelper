@@ -29,30 +29,35 @@
         <h4>Palautumisprosentti</h4>
         <div class="bar-outer">
           <div class="bar-inner"></div>
-          <span class="bar-pct">67%</span>
+          <span class="bar-pct">..%</span>
         </div>
         <div class="bar-labels"><span>Lepo</span><span>Stressi</span></div>
       </div>
 
       <div class="card">
-        <h4>Unidata</h4>
+        <h4>Viimeisin mittaus</h4>
+        <p>Syke: <strong id="bpm-arvo">synknoroidaan...</strong></p>
+        <p>HRV (RMSSD): <strong id="hrv-arvo">synknoroidaan...</strong></p>
       </div>
 
       <div class="vinkki">
         <b>Vinkki:</b>
         <p>Vältä kofeiinia klo 15:00 jälkeen, jotta unenlaatusi paranee.</p>
-        <button onclick="window.open('https://pubmed.ncbi.nlm.nih.gov/24235903/', '_blank')">Lisätietoa</button>      </div>
-  <div class="card">
-    <h4>Arvoi olotilasi:</h4>
-    <div class="pallot">
-      <div class="pallo" id="p1" data-testid="punainen" onclick="valitse(this)">1</div>
-      <div class="pallo" id="p2" data-testid="oranssi" onclick="valitse(this)">2</div>
-      <div class="pallo" id="p3" data-testid="keltainen" onclick="valitse(this)">3</div>
-      <div class="pallo" id="p4" data-testid="vaalean_vihreä" onclick="valitse(this)">4</div>
-      <div class="pallo" id="p5" data-testid="vihreä" onclick="valitse(this)">5</div>
+        <button onclick="window.open('https://pubmed.ncbi.nlm.nih.gov/24235903/', '_blank')">Lisätietoa</button>
+      </div>
+
+      <div class="card">
+        <h4>Arvoi olotilasi:</h4>
+        <div class="pallot">
+          <div class="pallo" id="p1" data-testid="punainen" onclick="valitse(this)">1</div>
+          <div class="pallo" id="p2" data-testid="oranssi" onclick="valitse(this)">2</div>
+          <div class="pallo" id="p3" data-testid="keltainen" onclick="valitse(this)">3</div>
+          <div class="pallo" id="p4" data-testid="vaalean_vihreä" onclick="valitse(this)">4</div>
+          <div class="pallo" id="p5" data-testid="vihreä" onclick="valitse(this)">5</div>
+        </div>
+        <p id="fiilis-viesti"></p>
+      </div>
     </div>
-    <p id="fiilis-viesti"></p>
-  </div>
 
     <script type="module" src="/src/js/homepage.js"></script>
     <script>
