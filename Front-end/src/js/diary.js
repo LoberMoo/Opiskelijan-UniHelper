@@ -1,4 +1,4 @@
-import { getEntries, deleteEntry, addentry } from "./entries.js";
+import { getEntries, deleteEntry, addentry, delent } from "./entries.js";
 
 // const getEntriesBtn = document.querySelector('.get_entries');
 // getEntriesBtn.addEventListener('click', getEntries);
@@ -6,11 +6,22 @@ import { getEntries, deleteEntry, addentry } from "./entries.js";
 // Automaattinen diary:n haku, ylhäällä on vanha versio joka haki painamalla nappia.
 window.onload = getEntries();
 
+document.addEventListener('click', function(event) {
+  if (event.target.matches('.dropdownbutton')) {
+    const area = event.target.nextElementSibling;
+    area.classList.toggle('show');
+  } 
+});
+
 const addentrybutton = document.querySelector('.add_entry');
 addentrybutton.addEventListener('click', addentry);
 
-const deleteEntryButton = document.querySelector('.deleteEntry');
-deleteEntryButton.addEventListener('click', deleteEntry);
+// const deleteEntryButton = document.querySelector('.deleteEntry');
+// deleteEntryButton.addEventListener('click', deleteEntry);
+
+const poistonappi = document.querySelector('.nuke');
+poistonappi.addEventListener('click', delent);
+
 
 // const opendropdownbtn = document.querySelector('.dropdownbutton');
 // opendropdownbtn.addEventListener('click', opendropdown);
@@ -33,15 +44,6 @@ deleteEntryButton.addEventListener('click', deleteEntry);
 //   }
 // } 
 
-
-document.addEventListener('click', function(event) {
-  if (event.target.matches('.dropdownbutton')) {
-    const area = event.target.nextElementSibling;
-    area.classList.toggle('show');
-  } else {
-    document.querySelectorAll('.area.show').forEach(el => el.classList.remove('show'));
-  }
-});
 
 
 let name = localStorage.getItem('name');

@@ -31,11 +31,10 @@ const getEntries = async (event) => {
   // console.log(response);
 
 
-
   diaryContainer.innerHTML = '';
-  response.forEach((entry) => {
+  response.forEach((entry, i) => {
     // console.log(entry);
-
+    i++;
     const card = document.createElement('section');
     card.classList.add('merkinnat');
     const nappi = document.createElement('BUTTON');
@@ -43,7 +42,8 @@ const getEntries = async (event) => {
     const pvKirjaTiedot = document.createElement('div');
     const dropdowncontent = document.createElement('div');
 
-    nappi.textContent = `Entry`;
+    nappi.textContent = `Entry ${i}`;
+    
     nappi.classList.add('dropdownbutton')
 
     // pvKirjaTiedot.id = "dropdown";
@@ -54,25 +54,30 @@ const getEntries = async (event) => {
     <p>Olotila: ${entry.mood}</p>
     <p>Paino: ${entry.weight}kg </p>
     <p>Unen määrä: ${entry.sleep_hours} tuntia</p>
-    <p>Muuta sanottavaa: ${entry.notes}</p>
-    <p><strong>ID: ${entry.entry_id}</strong></p>`;
+    <p>Notes: </p>
+    <p id="long">${entry.notes}</p>
+    <p><strong>ID: ${entry.entry_id}</strong></p>
+    <button id="${entry.entry_id}" class="nuke">Poista</button>`;
 
+    const entryidnumber = entry.entry_id;
 
     card.appendChild(nappi);
     card.appendChild(pvKirjaTiedot);
     card.appendChild(dropdowncontent);
     diaryContainer.appendChild(card);
-
   });
 };
 
 const deleteEntry = async () => {
   let token = localStorage.getItem('token');
-  const idInput = document.getElementById('entryId')
-  const entryId = idInput.value;
+  let headers = {};
+  // const idInput = document.getElementById('entryId')
+  // const entryId = idInput.value;
+  const entryId = document.getElementById(`nuke`).className;
+  console.log(entryId);
   // console.log(entryId);
   const apiurl = `http://127.0.0.1:3000/api/entries/${entryId}`
-  const confirmed = confirm(`Oletko varma, että haluat poistaa entry: Entry ID: ${entryId}?`);
+  const confirmed = confirm(`Oletko varma, että haluat poistaa entry: Entry ID: ${aeae}?`);
   if (token) {
     headers = {
       Authorization: `Bearer ${token}`,
@@ -170,4 +175,9 @@ const addentry = async () => {
   await getEntries();
 }
 
-export {getEntries, deleteEntry, addentry};
+const delent = () => {
+  const miumau = document.getElementById('nuke').className
+  console.log(miumau);
+}
+
+export {getEntries, deleteEntry, addentry, delent};
