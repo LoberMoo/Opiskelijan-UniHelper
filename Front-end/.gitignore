@@ -38,3 +38,4 @@ playwright-log.txt
 outputs/*.xml
 !outputs/*.html
 outputs/browser/
+src/assets/saavutettavuus

@@ -19,8 +19,8 @@ addentrybutton.addEventListener('click', addentry);
 // const deleteEntryButton = document.querySelector('.deleteEntry');
 // deleteEntryButton.addEventListener('click', deleteEntry);
 
-const poistonappi = document.querySelector('.nuke');
-poistonappi.addEventListener('click', delent);
+// const poistonappi = document.querySelector('.nuke');
+// poistonappi.addEventListener('click', delent);
 
 
 // const opendropdownbtn = document.querySelector('.dropdownbutton');

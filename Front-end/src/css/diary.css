@@ -103,14 +103,22 @@ nav a {
 
     .merkinnat {
       margin-bottom: 20px;
-
     }
 
+    .merkinnat button {
+        right: auto;
+    }
+
+    .nuke {
+        background-color: red;
+        font-size: 20px;
+        border-radius: 3px;
+        border: 2px solid rgb(255, 44, 44);
+    }
 
   .area {
     display: none;
     background-color: #f1f1f1;
-    width: 70%;
     z-index: 1;
     padding: 10px 0 10px 20px;
   }
@@ -137,6 +145,11 @@ nav a {
 
   .show {
     display: block;
+}
+
+.area button {
+    position: relative;
+    left: 90%;
 }
 
 .add_diary_button {

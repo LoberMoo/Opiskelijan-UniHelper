@@ -35,7 +35,7 @@ const getEntries = async (event) => {
   response.forEach((entry, i) => {
     // console.log(entry);
     i++;
-    const card = document.createElement('section');
+    const card = document.createElement('div');
     card.classList.add('merkinnat');
     const nappi = document.createElement('BUTTON');
 
@@ -46,7 +46,6 @@ const getEntries = async (event) => {
     
     nappi.classList.add('dropdownbutton')
 
-    // pvKirjaTiedot.id = "dropdown";
     pvKirjaTiedot.classList.add('area');
     const mauku = entry.created_at;
     const date = mauku.slice(0, 10);
@@ -65,19 +64,19 @@ const getEntries = async (event) => {
     card.appendChild(pvKirjaTiedot);
     card.appendChild(dropdowncontent);
     diaryContainer.appendChild(card);
+
+    const tamaId = entry.entry_id;
+    document.getElementById(tamaId).addEventListener('click', () => {
+      deleteEntry(tamaId);
+    });
   });
 };
 
-const deleteEntry = async () => {
+const deleteEntry = async (id) => {
   let token = localStorage.getItem('token');
   let headers = {};
-  // const idInput = document.getElementById('entryId')
-  // const entryId = idInput.value;
-  const entryId = document.getElementById(`nuke`).className;
-  console.log(entryId);
-  // console.log(entryId);
-  const apiurl = `http://127.0.0.1:3000/api/entries/${entryId}`
-  const confirmed = confirm(`Oletko varma, että haluat poistaa entry: Entry ID: ${aeae}?`);
+  const apiurl = `http://127.0.0.1:3000/api/entries/${id}`
+  const confirmed = confirm(`Oletko varma, että haluat poistaa entry: Entry ID: ${id}?`);
   if (token) {
     headers = {
       Authorization: `Bearer ${token}`,
@@ -102,7 +101,7 @@ const deleteEntry = async () => {
     return;
   }
 
-  alert(`Entry poistettu. ID: ${entryId}`);
+  alert(`Entry poistettu. ID: ${id}`);
     await getEntries();
 }
 
