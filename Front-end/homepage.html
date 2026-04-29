@@ -42,10 +42,28 @@
       </div>
 
       <div class="vinkki">
-        <b>Vinkki:</b>
-        <p>Vältä kofeiinia klo 15:00 jälkeen, jotta unenlaatusi paranee.</p>
-        <button onclick="window.open('https://pubmed.ncbi.nlm.nih.gov/24235903/', '_blank')">Lisätietoa</button>
-      </div>
+  <b>Vinkki:</b>
+  <p>Vältä kofeiinia klo 15:00 jälkeen, jotta unenlaatusi paranee.</p>
+  <button onclick="document.getElementById('vinkit-modal').style.display='flex'">Lisätietoa</button>
+</div>
+
+<div id="vinkit-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999; justify-content:center; align-items:center;">
+  <div style="background:white; border-radius:8px; padding:24px; width:340px; max-height:80vh;">
+    <h3 style="margin-bottom:14px">Vinkit parempaan uneen</h3>
+    <p><b>Kofeiini</b> — vältä klo 15 jälkeen</p>
+    <p><b>Terveellinen paino</b> — vähentää uniapnean riskiä</p>
+    <p><b>Ruokailu</b> — ei raskaita aterioita 2-3h ennen nukkumista</p>
+    <p><b>Liikunta</b> — säännöllinen, mutta ei myöhään illalla</p>
+    <p><b>Stressi</b> — kokeile meditaatiota tai rentoutusta</p>
+    <p><b>Ruutuaika</b> — vältä puhelinta tuntia ennen nukkumista</p>
+    <p><b>Lääkitys</b> — kysy lääkäriltä jos epäilet vaikutusta</p>
+    <p><b>Lämpötila</b> — viileä huone (16-19°C) auttaa nukahtamaan</p>
+    <p><b>Unirytmi</b> — säännöllinen uni- ja heräämisaika pitää sisäisen kellon kunnossa</p>
+    <p><b>Alkoholi</b> — alkoholi heikentää unen laatua vaikka helpottaa nukahtamista</p>
+    <br>
+    <button onclick="document.getElementById('vinkit-modal').style.display='none'" style="width:100%">Sulje</button>
+  </div>
+</div>
 
       <div class="card olotila">
         <h4>Arvoi olotilasi:</h4>

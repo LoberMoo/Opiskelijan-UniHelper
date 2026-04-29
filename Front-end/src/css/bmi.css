@@ -1,14 +1,12 @@
 .main { padding: 20px; max-width: 600px; margin: 0 auto; }
 
-.card { background: rgb(167,167,167); border-radius: 8px; padding: 20px; margin-bottom: 20px; }
-
 .laskuri-rivi { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
 
 .kentat p { margin-bottom: 10px; font-size: 14px; }
 .kentat input { padding: 6px; width: 110px; margin: 0 6px; border: none; border-radius: 4px; }
 .kentat button { background: #3a7bd5; color: white; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; }
 
-.tulos-alue { text-align: center; }
+.tulos-alue { text-align: center; font-weight: bold; font-size: 18px;}
 
 .info-pallo {
   width: 28px;
@@ -37,9 +35,8 @@
   color: #222;
   z-index: 10;
 }
-#bmiLuokka { font-size: 14px; font-weight: bold; margin-top: 6px; }
-.alipaino { color: #5bc8f5; }
-.normaali { color: #4c4; }
-.ylipaino { color: #ffc107; }
-.merkittava { color: #e53935; }
+.alipaino { color: #5bc8f5 !important; }
+.normaali { color: #4c4 !important; }
+.ylipaino { color: #ffc107 !important; }
+.merkittava { color: #e53935 !important; }
 .info-pallo:hover .info-tooltip { display: block; }
