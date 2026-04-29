@@ -49,20 +49,23 @@
   </div>
 
 <script>
+  // popup kun lomake lähetetty
   function laheta() {
     document.getElementById('popup').style.display = 'block'
   }
+  // sivu refreshaa popupin sulkemisen jälkeen, elikkä lomake tyhjenee
   function sulje() {
     document.getElementById('popup').style.display = 'none'
     location.reload()
   }
+  // näyttää tiedoston nimen
   document.getElementById('tiedostoInput').addEventListener('change', function() {
   if (this.files.length > 0) {
     document.getElementById('nimiTeksti').textContent = this.files[0].name
     document.getElementById('tiedostoNimi').style.display = 'block'
   }
 })
-
+// poistaa tiedoston ja nimen
 function poistaTiedosto() {
   document.getElementById('tiedostoInput').value = ''
   document.getElementById('tiedostoNimi').style.display = 'none'

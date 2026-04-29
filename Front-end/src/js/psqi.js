@@ -1,14 +1,11 @@
-function toggleSidebar() {
-    document.getElementById("sidebar").classList.toggle("auki");
-}
-
+// vaihtaa näkyvän sivun
 function goTo(n) {
     document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
     document.getElementById("page" + n).classList.add("active");
 }
-
+// laske pisteet komponenteittain (c1-c7) ja näytä tulos
 function laske() {
-
+    // c1: subjektiivinen unenlaatu
     const c1 = parseInt(document.getElementById("k5").value);
 
     const min = parseInt(document.getElementById("k2").value) || 0;
@@ -19,13 +16,14 @@ function laske() {
     else if (min > 15) nukahtaminen = 1;
 
     const b1 = parseInt(document.querySelector('input[name="b1"]:checked')?.value || 0);
-
+    // c2: nukahtamisviive
     let c2 = nukahtaminen + b1;
     if (c2 > 4) c2 = 3;
     else if (c2 > 2) c2 = 2;
     else if (c2 > 0) c2 = 1;
 
     const tunnit = parseFloat(document.getElementById("k4").value) || 0;
+    // c3: unen kesto
     let c3 = 0;
 
     if (tunnit < 5) c3 = 3;
@@ -34,7 +32,7 @@ function laske() {
 
     const k1 = document.getElementById("k1").value;
     const k3 = document.getElementById("k3").value;
-
+    // c4: unitehokkuus (nukuttu aika / sängyssä oloaika)
     let c4 = 0;
 
     if (k1 && k3 && tunnit) {
@@ -56,24 +54,24 @@ function laske() {
     for (let i = 2; i <= 3; i++) {
         hairiot += parseInt(document.querySelector(`input[name="b${i}"]:checked`)?.value || 0);
     }
-
+    // c5: unihäiriöt
     let c5 = 0;
 
     if (hairiot > 6) c5 = 3;
     else if (hairiot > 3) c5 = 2;
     else if (hairiot > 0) c5 = 1;
-
+    // c6: unilääkkeiden käyttö
     const c6 = parseInt(document.getElementById("k6").value);
 
     const vasy = parseInt(document.getElementById("k7").value) +
                  parseInt(document.getElementById("k8").value);
-
+    // c7: päiväväsymys
     let c7 = 0;
 
     if (vasy > 4) c7 = 3;
     else if (vasy > 2) c7 = 2;
     else if (vasy > 0) c7 = 1;
-
+    // summa, max 21. Yli 5p on huono unenlaatu
     const pisteet = c1 + c2 + c3 + c4 + c5 + c6 + c7;
 
     document.getElementById("tulos").textContent = pisteet + " / 21";
