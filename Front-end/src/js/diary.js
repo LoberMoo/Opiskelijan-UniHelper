@@ -13,6 +13,7 @@ document.addEventListener('click', function(event) {
   } 
 });
 
+
 const addentrybutton = document.querySelector('.add_entry');
 addentrybutton.addEventListener('click', addentry);
 

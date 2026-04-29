@@ -25,16 +25,17 @@
     </div>
 
     <div class="main">
-      <div class="card">
-        <h4>Palautumisprosentti</h4>
-        <div class="bar-outer">
+      <div class="card palautumis">
+        <h4>Palautumis</h4>
+        <!-- <progress value="60" max="100"></progress> -->
+        <!-- <div class="bar-outer">
           <div class="bar-inner"></div>
           <span class="bar-pct">..%</span>
-        </div>
-        <div class="bar-labels"><span>Lepo</span><span>Stressi</span></div>
+        </div> -->
+        <!-- <div class="bar-labels"><span>Lepo</span><span>Stressi</span></div> -->
       </div>
 
-      <div class="card">
+      <div class="card mittaus">
         <h4>Viimeisin mittaus</h4>
         <p>Syke: <strong id="bpm-arvo">synknoroidaan...</strong></p>
         <p>HRV (RMSSD): <strong id="hrv-arvo">synknoroidaan...</strong></p>
@@ -46,7 +47,7 @@
         <button onclick="window.open('https://pubmed.ncbi.nlm.nih.gov/24235903/', '_blank')">Lisätietoa</button>
       </div>
 
-      <div class="card">
+      <div class="card olotila">
         <h4>Arvoi olotilasi:</h4>
         <div class="pallot">
           <div class="pallo" id="p1" data-testid="punainen" onclick="valitse(this)">1</div>
