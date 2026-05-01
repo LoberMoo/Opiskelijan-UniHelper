@@ -39,3 +39,4 @@ outputs/*.xml
 !outputs/*.html
 outputs/browser/
 src/assets/saavutettavuus
+src/testaus

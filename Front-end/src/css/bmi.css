@@ -36,7 +36,11 @@
   z-index: 10;
 }
 .alipaino { color: #5bc8f5 !important; }
-.normaali { color: #4c4 !important; }
+.normaali { color: rgb(33, 255, 33) !important; }
 .ylipaino { color: #ffc107 !important; }
 .merkittava { color: #e53935 !important; }
 .info-pallo:hover .info-tooltip { display: block; }
+
+#bmiLuokka {
+  font-size: larger;
+}

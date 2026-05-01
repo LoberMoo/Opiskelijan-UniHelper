@@ -27,18 +27,18 @@
     <div class="main">
       <div class="card palautumis">
         <h4>Palautumis</h4>
-        <!-- <progress value="60" max="100"></progress> -->
-        <!-- <div class="bar-outer">
-          <div class="bar-inner"></div>
-          <span class="bar-pct">..%</span>
-        </div> -->
-        <!-- <div class="bar-labels"><span>Lepo</span><span>Stressi</span></div> -->
+        <!-- Dynaamisesti luotu tieto palautumisarvosta tulee tähän -->
       </div>
 
       <div class="card mittaus">
-        <h4>Viimeisin mittaus</h4>
-        <p>Syke: <strong id="bpm-arvo">synknoroidaan...</strong></p>
-        <p>HRV (RMSSD): <strong id="hrv-arvo">synknoroidaan...</strong></p>
+        <div class="kubios-card">
+          <h2 class="kubios-section-title">Chart.js tulos</h2>
+          <div class="kubios-canvas-wrap">
+            <canvas id="jsChart"></canvas>
+          </div>
+        </div>
+        <!-- <p>Syke: <strong id="bpm-arvo">synknoroidaan...</strong></p>
+        <p>HRV (RMSSD): <strong id="hrv-arvo">synknoroidaan...</strong></p> -->
       </div>
 
       <div class="vinkki">
@@ -86,5 +86,7 @@
         document.getElementById('fiilis-viesti').textContent = 'Vastaus tallennetaan!'
       }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="/src/js/kubios-data.js"></script>
   </body>
 </html>
