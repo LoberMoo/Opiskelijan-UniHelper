@@ -1,5 +1,5 @@
 body {
-    background: #F8FAFC;
+    background:  #eef2f6;
     font-family: Arial;
     margin: 0;
 }
@@ -86,11 +86,12 @@ nav a {
     margin: 0 auto;
 }
 
-.card { background: white;
-    border-radius: 10px;
-    padding: 20px;
+.card { background: #FFFFFF;
+    border-radius: 12px;
+    padding: 25px;
     margin-bottom: 10px;
-    box-shadow: 0 4p rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .bar-outer {
