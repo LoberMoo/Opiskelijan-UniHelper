@@ -1,27 +1,9 @@
-body {
-    font-family: Arial;
-    background: #F8FAFC;
-    margin: 0;
-    padding: 0;
-}
+body {    font-family: Arial;    background: #F8FAFC;    margin: 0;    padding: 0;}
 
 
-.window {
-    background: linear-gradient(145deg, #f5f7fa, #e4e8ec);
-    border: 1px solid #d0d5db;
-    width: 55%;
-    padding: 20px;
-    margin: 90px auto 0;
-}
+.window {   background: linear-gradient(145deg, #f5f7fa, #e4e8ec);    border: 1px solid #e2e8f0;    width: 55%;    padding: 30px;    margin: 90px auto 0; border-radius: 12px;}
 
-.titlebar {
-    background-color: black;
-    color: white;
-    padding: 5px 10px;
-    font-size: 24px;
-    display: flex;
-    justify-content: space-between;
-}
+.titlebar {    background-color: #1e293b;    color: white;    padding: 12px 20px;    font-size: 24px;    display: flex;    justify-content: space-between;    border-radius: 8px;    margin-bottom: 4px;}
 
 .content {
     padding: 15px;
@@ -41,39 +23,49 @@ body {
 .question input[type="time"],
 .question input[type="number"] {
     font-size: 16px;
-    padding: 2px 5px;
-    border: 1px solid black;
-    background: #d4a373; 
+    padding: 6px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff; 
     width: 130px;
+    outline: none;
+    border-radius: 4px;
 }
-
-
 
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 14px;
+    margin-top: 25px;
     border-top: 1px solid #999;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 .btn-next {
-    background-color: #2E7D32;
+    background-color: #10b981;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 10px 20px;
     cursor: pointer;
+    border-radius: 6px;
+    font-size: 14px;
+}
+.btn-next:hover {
+    background-color: #059667;
 }
 
 .btn-prev {
-    background-color: #999;
-    color: #111;
-    border: none;
-    padding: 5px 10px;
+    background-color: transparent;
+    color: #64748b;
+    border: 1px solid #cbd5e1;
+    padding: 10px 20px;
     cursor: pointer;
+    font-size: 14px;
+    border-radius: 6px;
 }
-
+.btn-prev:hover {
+    background-color: rgb(194, 0, 0);
+    color: white;
+}
 /* sivujen vaihto */
 .page { display: none; }
 .page.active { display: block; }

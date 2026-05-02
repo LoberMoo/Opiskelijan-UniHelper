@@ -1,41 +1,24 @@
 .main { padding: 20px; max-width: 600px; margin: 0 auto; }
+
 body {
-    background: #F8FAFC;
+    background: #f0f2f5;
+    margin: 0;
 }
-.laskuri-rivi { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.laskuri-rivi { display: flex; justify-content: space-between; align-items: center; gap: 20px;}
 
 .kentat p { margin-bottom: 10px; font-size: 14px; }
-.kentat input { padding: 6px; width: 110px; margin: 0 6px; border: none; border-radius: 4px; }
-.kentat button { background: #3a7bd5; color: white; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; }
+.kentat input { font-size: 14px;padding: 6px 7px; width: 110px; margin: 0 6px; border: 1px solid #cbd5e1; border-radius: 6px; transition: border-color 0.1s; }
+.kentat button { background: #1e293b; color: white; border: none; border-radius: 6px; padding: 10px 26px; cursor: pointer;}
+.kentat button:hover { background-color: #546a8c; }
 
 .tulos-alue { text-align: center; font-weight: bold; font-size: 18px;}
 
 .info-pallo {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #555;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  cursor: pointer;
-  position: relative;
+  width: 24px;  height: 24px;  border-radius: 50%;  background: #555;  color: white;  display: inline-flex;  justify-content: center; font-size: 14px;  cursor: pointer;  position: relative; align-items: center;
 }
 
 .info-tooltip {
-  display: none;
-  position: absolute;
-  left: 36px;
-  top: -10px;
-  background: #b6f5a0;
-  border-radius: 6px;
-  padding: 10px 14px;
-  width: 220px;
-  font-size: 13px;
-  color: #222;
-  z-index: 10;
+  display: none; position: absolute; left: 36px; top: -10px;  background: #b6f5a0;  border-radius: 6px;  padding: 10px 14px;  width: 220px;  font-size: 13px;  color: #222;  z-index: 10;
 }
 .alipaino { color: #5bc8f5 !important; }
 .normaali { color: rgb(110, 208, 36) !important; }

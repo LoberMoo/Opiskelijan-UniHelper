@@ -94,34 +94,13 @@ nav a {
     border: 1px solid rgba(0,0,0,0.05);
 }
 
-.bar-outer {
-    background: #e55;
-    border-radius: 20px;
-    height: 26px;
-    position: relative;
-    overflow: hidden;
-}
-
-.bar-inner {
-    background: #4c4;
-    width: 67%;
-    height: 100%;
-}
-
-.bar-pct {
-    position: absolute;
-    top: 5px;
-    left: 50%;
-    color: white;
-}
-
 .bar-labels {
     display: flex;
     justify-content: space-between;
     font-size: 11px; color: #888;
 }
 
-.vinkki { background: #ffeb99;
+.vinkki { background: #fffb99;
     border-radius: 8px;
     padding: 14px;
     margin-bottom: 14px;
