@@ -1,5 +1,7 @@
 .main { padding: 20px; max-width: 600px; margin: 0 auto; }
-
+body {
+    background: #F8FAFC;
+}
 .laskuri-rivi { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
 
 .kentat p { margin-bottom: 10px; font-size: 14px; }

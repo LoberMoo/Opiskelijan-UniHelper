@@ -1,3 +1,6 @@
+body {
+    background: #F8FAFC;
+}
 .lomake { background: rgb(167,167,167); width: 90%; max-width: 900px; margin: 80px auto; padding: 25px; border-radius: 8px; display: flex; flex-direction: column; gap: 10px; }
 
 .ylärivi { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
