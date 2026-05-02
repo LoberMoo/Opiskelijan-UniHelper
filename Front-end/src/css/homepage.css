@@ -153,14 +153,17 @@ nav a {
     justify-content: center;
     text-decoration: underline;
     color: rgba(0,0,0,0.5);
+    transition: all 0.2s ease; 
 }
 
 .pallo:hover {
-    border-color: #367;
+    transform: scale(1.1); 
 }
 
 .pallo.valittu {
-    border-color: #000;
+    opacity: 0.67;           
+    transform: scale(0.97); 
+    border: 3px solid white;
 }
 
 #p1 {
@@ -186,6 +189,8 @@ nav a {
     margin-top: 14px;
     font-size: 12px;
     color: #367;
+    transition: opacity 0.67s;
+    height: 1px;                
 }
 
 progress {

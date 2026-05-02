@@ -83,8 +83,13 @@
       function valitse(el) {
         document.querySelectorAll('.pallo').forEach(p => p.classList.remove('valittu'));
         el.classList.add('valittu');
-        document.getElementById('fiilis-viesti').textContent = 'Vastaus tallennetaan!'
-      }
+      const viesti = document.getElementById('fiilis-viesti');
+      viesti.textContent = 'Vastaus tallennettu!';
+      viesti.style.opacity = '1'; 
+      setTimeout(() => {
+          viesti.style.opacity = '0'; 
+      }, 670);      
+}
     </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="/src/js/kubios-data.js"></script>
