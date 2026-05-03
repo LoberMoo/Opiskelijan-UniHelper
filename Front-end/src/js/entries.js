@@ -119,27 +119,32 @@ const addentry = async () => {
 
   const mood = document.getElementById('mood')
   const moodval = mood.value
-  console.log(moodval)
+  // console.log(moodval)
 
   const weight = document.getElementById('weight')
   const weightval = weight.value
-  console.log(weightval)
+  // console.log(weightval)
 
   const sleep = document.getElementById('sleep')
   const sleepval = sleep.value
-  console.log(sleepval)
+  // console.log(sleepval)
 
   const notes = document.getElementById('notes')
   const notesval = notes.value
-  console.log(notesval)
+  // console.log(notesval)
 
   let datetime = new Date ()
 
   let day = datetime.getDate();
+  if (day < 10) {
+    day = '0' + day;
+  }
+
   let month = datetime.getMonth() + 1;
   if (month < 10) {
     month = '0' + month;
   }
+
   let year = datetime.getFullYear();
 
   let pvmr = `${year}-${month}-${day}`
@@ -158,12 +163,16 @@ const addentry = async () => {
 		body: JSON.stringify(bodydata),
 		method: 'POST',
 		headers: {
-			'Content-type': 'application/json',
+			'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
 		},
 	};
 
   const entry = await fetchData(apiurl, options);
+  // console.log(apiurl);
+  // console.log(options);
+  // console.log(entry);
+
   if (entry.error){
     console.log(entry.error);
     alert(`Tapahtui virhe.`);
