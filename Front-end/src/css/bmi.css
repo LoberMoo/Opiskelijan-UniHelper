@@ -29,3 +29,12 @@ body {
 #bmiLuokka {
   font-size: larger;
 }
+
+#logout {
+    position: absolute;
+    top: 80%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: #367;
+}

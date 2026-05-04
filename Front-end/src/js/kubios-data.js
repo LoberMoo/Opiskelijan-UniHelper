@@ -101,6 +101,7 @@ const drawChart = (userData) => {
   // Hakekaa stressIndex tiedot
   const hrv = userData.results.map((rivi) => rivi.result.rmssd_ms);
   console.log(userData);
+  const readiness = userData.results.map((rivi) => rivi.result.readiness);
 
   // loggausta datan varmistamista varten
   ///////////////////////////////////////
@@ -127,6 +128,12 @@ const drawChart = (userData) => {
           data: hrv,
           borderWidth: 1,
           borderColor: 'blue',
+        },
+        {
+          label: 'Readiness',
+          data: readiness,
+          borderWidth: 1,
+          borderColor: 'lime',
         },
       ],
     },
