@@ -7,12 +7,13 @@
     <title>UniHelper</title>
   </head>
   <body>
+    <!-- Navigointi -->
     <nav>
       <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('auki')">☰</button>
       <span style="color:white; font-weight:bold">UniHelper</span>
       <span class="kayttajatunnus">Hei <span class="username"></span>!</span>
     </nav>
-
+    <!-- Navin sisällä olevat valinnat -->
     <div class="sidebar" id="sidebar">
       <ul>
         <li><a href="#">Koti</a></li>
@@ -24,30 +25,31 @@
       </ul>
     </div>
 
-    <div class="main">
-      <div class="card palautumis">
-        <h4>Palautumis</h4>
-        <!-- Dynaamisesti luotu tieto palautumisarvosta tulee tähän -->
-      </div>
+<main>
+  <div class="card palautumis">
+    <h4>Palautumis</h4>
+     <!-- Dynaamisesti luotu tieto palautumisarvosta tulee tähän -->
+  </div>
 
-      <div class="card mittaus">
-        <div class="kubios-card">
-          <h2 class="kubios-section-title">Chart.js tulos</h2>
-          <div class="kubios-canvas-wrap">
-            <canvas id="jsChart"></canvas>
-          </div>
-        </div>
-        <!-- <p>Syke: <strong id="bpm-arvo">synknoroidaan...</strong></p>
-        <p>HRV (RMSSD): <strong id="hrv-arvo">synknoroidaan...</strong></p> -->
-      </div>
+<div class="card mittaus">
+  <div class="kubios-card">
+    <h2 class="kubios-section-title">Mittaukset</h2>
+    <div class="kubios-canvas-wrap">
+      <!-- Dynaamisesti luotu kubios kaava tulee tähän, näytetty data on Syke ja Sykevälivaihtelu -->
+      <canvas id="jsChart"></canvas>
+    </div>
+  </div>
+</div>
 
-      <div class="vinkki">
+<div class="vinkki">
   <b>Vinkki:</b>
   <p>Vältä kofeiinia klo 15:00 jälkeen, jotta unenlaatusi paranee.</p>
   <button onclick="document.getElementById('vinkit-modal').style.display='flex'">Lisätietoa</button>
 </div>
 
-<div id="vinkit-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999; justify-content:center; align-items:center;">
+<!-- Ikkuna yleisiä vinkkejä varten parantaa unenlaatua -->
+
+<div id="vinkit-modal" style="display:none">
   <div style="background:white; border-radius:8px; padding:24px; width:340px; max-height:80vh;">
     <h3 style="margin-bottom:14px">Vinkit parempaan uneen</h3>
     <p><b>Kofeiini</b> — kofeiini klo 15:00 jälkeen pitää aivot vireystilassa silloin, kun niiden pitäisi jo alkaa valmistautua uneen.</p>
@@ -65,33 +67,36 @@
   </div>
 </div>
 
-      <div class="card olotila">
-        <h4>Arvoi olotilasi:</h4>
-        <div class="pallot">
-          <div class="pallo" id="p1" data-testid="punainen" onclick="valitse(this)">1</div>
-          <div class="pallo" id="p2" data-testid="oranssi" onclick="valitse(this)">2</div>
-          <div class="pallo" id="p3" data-testid="keltainen" onclick="valitse(this)">3</div>
-          <div class="pallo" id="p4" data-testid="vaalean_vihreä" onclick="valitse(this)">4</div>
-          <div class="pallo" id="p5" data-testid="vihreä" onclick="valitse(this)">5</div>
-        </div>
-        <p id="fiilis-viesti"></p>
-      </div>
+<!-- Olotila valikko -->
+<div class="card olotila">
+  <h4>Arvoi olotilasi:</h4>
+    <div class="pallot">
+      <div class="pallo" id="p1" data-testid="punainen" onclick="valitse(this)">1</div>
+      <div class="pallo" id="p2" data-testid="oranssi" onclick="valitse(this)">2</div>
+      <div class="pallo" id="p3" data-testid="keltainen" onclick="valitse(this)">3</div>
+      <div class="pallo" id="p4" data-testid="vaalean_vihreä" onclick="valitse(this)">4</div>
+      <div class="pallo" id="p5" data-testid="vihreä" onclick="valitse(this)">5</div>
     </div>
+  <p id="fiilis-viesti"></p>
+  </div>
+</main>
 
-    <script type="module" src="/src/js/homepage.js"></script>
-    <script>
-      function valitse(el) {
-        document.querySelectorAll('.pallo').forEach(p => p.classList.remove('valittu'));
-        el.classList.add('valittu');
-      const viesti = document.getElementById('fiilis-viesti');
-      viesti.textContent = 'Vastaus tallennettu!';
-      viesti.style.opacity = '1'; 
-      setTimeout(() => {
-          viesti.style.opacity = '0'; 
-      }, 670);      
+</body>
+<script type="module" src="/src/js/homepage.js"></script>
+<script>
+  // Skripti pallojen "valitsemista varten"
+  function valitse(el) {
+  document.querySelectorAll('.pallo').forEach(p => p.classList.remove('valittu'));
+  el.classList.add('valittu');
+  const viesti = document.getElementById('fiilis-viesti');
+  viesti.textContent = 'Vastaus tallennettu!';
+  viesti.style.opacity = '1'; 
+  setTimeout(() => {
+    viesti.style.opacity = '0'; 
+  }, 670); 
 }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="module" src="/src/js/kubios-data.js"></script>
-  </body>
+</script>
+<!-- Muita moduuleja ja skriptejä sivuston toimintoa varten -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="/src/js/kubios-data.js"></script>
 </html>

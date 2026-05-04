@@ -85,8 +85,8 @@ const drawChart = (userData) => {
 
 
   // Muodostetaan erilliset taulukot chat.js:sää varten
-  // haetaan käyttämällä map metodia vain kaikki readiness arvot
-  const readiness = userData.results.map((rivi) => rivi.result.readiness);
+  // haetaan käyttämällä map metodia vain kaikki sykkeen arvot
+  const bpm = userData.results.map((rivi) => rivi.result.mean_hr_bpm);
 
   //
   const formatter = new Intl.DateTimeFormat('fi-FI', {
@@ -99,7 +99,8 @@ const drawChart = (userData) => {
     formatter.format(new Date(rivi.create_timestamp))
   );
   // Hakekaa stressIndex tiedot
-  const stressIndex = userData.results.map((rivi) => rivi.result.stress_index);
+  const hrv = userData.results.map((rivi) => rivi.result.rmssd_ms);
+  console.log(userData);
 
   // loggausta datan varmistamista varten
   ///////////////////////////////////////
@@ -116,14 +117,14 @@ const drawChart = (userData) => {
       labels: labels,
       datasets: [
         {
-          label: 'Readiness',
-          data: readiness,
+          label: 'BPM',
+          data: bpm,
           borderWidth: 1,
           borderColor: 'red',
         },
         {
-          label: 'Stress Index',
-          data: stressIndex,
+          label: 'HRV',
+          data: hrv,
           borderWidth: 1,
           borderColor: 'blue',
         },
@@ -135,7 +136,7 @@ const drawChart = (userData) => {
           beginAtZero: true,
           title: {
             display: true,
-            text: 'Readiness / Stress',
+            text: 'BPM / HRV',
           },
         },
       },

@@ -1,48 +1,17 @@
 import { fetchData } from "./fetch";
 
 const token = localStorage.getItem('token')
-
 const card = document.querySelector('.palautumis')
 
-const haeKubiosData = async () => {
-  if (!token) {
-    console.log('Ei tokenia')
-    return
-  }
-
-  try {
-    const res = await fetch('https://analysis.kubioscloud.com/v2/result/self?from=2026-01-01', {
-      headers: {
-        'Authorization': 'Bearer ' + token,
-        'User-Agent': 'UniHelper'
-      }
-    })
-
-    const data = await res.json()
-    const viimeisin = data.results[0]
-
-    // Readiness = palautumisprosentti
-    const readiness = Math.round(viimeisin.readiness * 100)
-    document.querySelector('.bar-inner').style.width = readiness + '%'
-    document.querySelector('.bar-pct').textContent = readiness + '%'
-
-    // BPM sydämen lyöntitiheys
-    const bpm = Math.round(viimeisin.mean_hr_bpm)
-    document.getElementById('bpm-arvo').textContent = bpm + ' bpm'
-
-    // RMSSD = HRV
-    const hrv = Math.round(viimeisin.rmssd)
-    document.getElementById('hrv-arvo').textContent = hrv + ' ms'
-
-  } catch (err) {
-    console.error('Kubios haku epäonnistui:', err)
-  }
-}
-
+// Palautumis arvon haku ja esitys funktio 
 const palautumis = async () => {
+  // Backendiä varten kommunikoivan API:n linkki
   const url = 'http://127.0.0.1:3000/api/kubios/user-data';
   let headers = {};
+  // Tokenin haku
   let token = localStorage.getItem('token');
+  // Haun muotoilu tokenin kanssa
+  //////////////////////////////////////////////
   if (token) {
     headers = {
       Authorization: `Bearer ${token}`,
@@ -53,26 +22,39 @@ const palautumis = async () => {
   };
 
   const response = await fetchData(url, options);
-
+  //////////////////////////////////////////////
+  //Yleistä virheenkäsittelyä, ei spesifoi, että mikä on vialla
   if (response.error) {
     console.error('Virhe kirjautumisessa:', response.error);
     return;
   }
-
+  // Jos kaikki menee oikein niin funktio jatkaa seuraavaan kohtaan
   if (response.message) {
     console.log(response.message, 'success');
   }
+  //////////////////////////////////////////////
+  //////////////////////////////////////////////
 
   // console.log(response);
   // console.log(response.results[15].create_timestamp);
+
+  // Tässä alkaa dynaamisen palautumis palkin luonti
+  ///////////////////////////////////////////////////////////
+  // Tämän tarkoitus on lyhentää Json haun vaiheita jotta ei ole response.results.(blah blah)
+  // vaan results.(blah blah)
   const {results} = response;
 
+  // Ensiksi funktio ottaa ja lyhentää viimeisimmän Kubios haun(for lack of a better word)
+  // ja lyhentää sen siistimmäksi, eli yyyy-mm-dd muotoon
   const pvmr = results[results.length -1].create_timestamp
   const date = pvmr.slice(0, 10)
 
+  // Seuraavaksi fuktio ottaa saman, eli viimeisimmän kubios haun palautumisarvon
+  // ja tekee siitä lyhyen numeron, eli 80.1234567 => 80
   const readinessnum = results[results.length -1].result.readiness
   const wholenum = Math.trunc(readinessnum);
 
+  // Viimeiseksi funktio dynaamisesti luo palkin homepage sivustolle
   card.innerhtml = '';
   const palautumispalkki = document.createElement('div');
   palautumispalkki.classList.add('palkki')
@@ -83,9 +65,17 @@ const palautumis = async () => {
   <p class="readinessprosentti"><u>Palautumisprosentti: ${wholenum}%</u></p>`;
 
   card.appendChild(palautumispalkki);
+  ///////////////////////////////////////////////////////////
 }
-
 
 // haeKubiosData()
 
+
+// Tämä juoksee funktion automaattisesti kun käyttäjä avaa sivun
 window.onload = palautumis();
+
+// Hakee käyttäjän nimen joka on local storagessa, jos nimeä ei ole niin ohjelma antaa käyttäjälle nimen "vieras"
+// Käyttäjän nimi (joka on vain sähköposti osoite) näytetään sivun oikeassa yläkulmassa
+let name = localStorage.getItem('name');
+document.querySelector('.username').textContent = name ? name :
+'vieras';

@@ -3,10 +3,13 @@ import '../css/forms.css';
 import '../css/snackbar.css';
 import { fetchData } from './fetch.js';
 
-console.log('Moi luodaan nyt tokeneita ja kirjaudutaan sisään');
+// console.log('Moi luodaan nyt tokeneita ja kirjaudutaan sisään');
 
-// Esimerkin takia haut ovat nyt suoraan tässä tiedostossa, jotta harjoitus ei sekoita
-// teidän omaa projektin rakennetta
+///////////////////////////////////////////////////////////////////////////////////
+// KAIKKI SKRIPTIT MITKÄ TOIMIVAT TÄLLÄ SIVUSTOLLA TOIMIVAT MUTTA LUODUT KÄYTTÄJÄT
+// EIVÄT PYSTY KIRJAUTUA TERVEYS SOVELLUS SIVUSTOLLE SILLÄ SOVELLUKSEEN PITÄÄ
+// KIRJAUTUA KUBIOS KÄYTTÄJÄTUNNUKSILLA
+///////////////////////////////////////////////////////////////////////////////////
 
 const registerUser = async (event) => {
 	event.preventDefault();

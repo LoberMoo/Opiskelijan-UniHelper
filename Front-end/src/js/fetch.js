@@ -6,6 +6,8 @@
  *
  * @returns {Object} response json data
  */
+
+// Tätä käytetään aina rajapinnan hakuja varten, en tiedä sen toimintoja.
 const fetchData = async (url, options = {}) => {
   try {
     const response = await fetch(url, options);

@@ -81,3 +81,9 @@ function laske() {
 
     goTo("Valmis");
 }
+
+// Hakee käyttäjän nimen joka on local storagessa, jos nimeä ei ole niin ohjelma antaa käyttäjälle nimen "vieras"
+// Käyttäjän nimi (joka on vain sähköposti osoite) näytetään sivun oikeassa yläkulmassa
+let name = localStorage.getItem('name');
+document.querySelector('.username').textContent = name ? name :
+'vieras';

@@ -1,4 +1,4 @@
-import { getEntries, deleteEntry, addentry, delent } from "./entries.js";
+import { getEntries, deleteEntry, addentry } from "./entries.js";
 
 // const getEntriesBtn = document.querySelector('.get_entries');
 // getEntriesBtn.addEventListener('click', getEntries);
@@ -6,6 +6,7 @@ import { getEntries, deleteEntry, addentry, delent } from "./entries.js";
 // Automaattinen diary:n haku, ylhäällä on vanha versio joka haki painamalla nappia.
 window.onload = getEntries();
 
+// Toiminto joka saa napit toimimaan tappeina ja että yhen napin painallus ei avaa kaikkia.
 document.addEventListener('click', function(event) {
   if (event.target.matches('.dropdownbutton')) {
     const area = event.target.nextElementSibling;
@@ -17,36 +18,9 @@ document.addEventListener('click', function(event) {
 const addentrybutton = document.querySelector('.add_entry');
 addentrybutton.addEventListener('click', addentry);
 
-// const deleteEntryButton = document.querySelector('.deleteEntry');
-// deleteEntryButton.addEventListener('click', deleteEntry);
 
-// const poistonappi = document.querySelector('.nuke');
-// poistonappi.addEventListener('click', delent);
-
-
-// const opendropdownbtn = document.querySelector('.dropdownbutton');
-// opendropdownbtn.addEventListener('click', opendropdown);
-
-// function opendropdown() {
-//   document.getElementById("dropdown").classList.toggle("show");
-// }
-
-
-// window.onclick = function(event) {
-//   if (!event.target.matches('.dropdownbutton')) {
-//     var dropdowns = document.getElementsByClassName("area");
-//     var i;
-//     for (i = 0; i < dropdowns.length; i++) {
-//       var openDropdown = dropdowns[i];
-//       if (openDropdown.classList.contains('show')) {
-//         openDropdown.classList.remove('show');
-//       }
-//     }
-//   }
-// } 
-
-
-
+// Hakee käyttäjän nimen joka on local storagessa, jos nimeä ei ole niin ohjelma antaa käyttäjälle nimen "vieras"
+// Käyttäjän nimi (joka on vain sähköposti osoite) näytetään sivun oikeassa yläkulmassa
 let name = localStorage.getItem('name');
 document.querySelector('.username').textContent = name ? name :
 'vieras';
