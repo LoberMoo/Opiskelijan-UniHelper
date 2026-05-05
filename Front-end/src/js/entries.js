@@ -7,7 +7,7 @@ const diaryContainer = document.querySelector('.merkinta');
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 const getEntries = async (event) => {
   // API url, linkki suorittaa back-endissä olevan haku skriptin.
-  const url = 'https://kivi.server.swedencentral.cloudapp.azure.com/api/entries';
+  const url = 'https://kivi-server.swedencentral.cloudapp.azure.com/api/entries';
   let headers = {};
   // Tokenin haku kirjautuneelta käyttäjältä + virheenkäsittely jos tokenia ei löydy
   let token = localStorage.getItem('token');
@@ -96,7 +96,7 @@ const getEntries = async (event) => {
 const deleteEntry = async (id) => {
   let token = localStorage.getItem('token');
   let headers = {};
-  const apiurl = `https://kivi.server.swedencentral.cloudapp.azure.com/api/entries/${id}`
+  const apiurl = `https://kivi-server.swedencentral.cloudapp.azure.com/api/entries/${id}`
   const confirmed = confirm(`Oletko varma, että haluat poistaa entry: Entry ID: ${id}?`);
   if (token) {
     headers = {
@@ -132,7 +132,7 @@ const deleteEntry = async (id) => {
 const addentry = async () => {
   let token = localStorage.getItem('token');
   let headers = {}
-  const apiurl = `https://kivi.server.swedencentral.cloudapp.azure.com/api/entries/`
+  const apiurl = `https://kivi-server.swedencentral.cloudapp.azure.com/api/entries/`
   
   if (token) {
     headers = {

@@ -5,7 +5,7 @@ import { fetchData } from '/src/js/fetch.js';
 // const getUserInfo = async () => {
 //   console.log('Käyttäjän INFO Kubioksesta');
 
-//   const url = 'https://kivi.server.swedencentral.cloudapp.azure.com/api/kubios/user-info';
+//   const url = 'https://kivi-server.swedencentral.cloudapp.azure.com/api/kubios/user-info';
 //   const token = localStorage.getItem('token');
 //   const headers = { Authorization: `Bearer ${token}` };
 //   const options = {
@@ -25,7 +25,7 @@ import { fetchData } from '/src/js/fetch.js';
 const getUserData = async () => {
 
 
-  const url = 'https://kivi.server.swedencentral.cloudapp.azure.com/api/kubios/user-data';
+  const url = 'https://kivi-server.swedencentral.cloudapp.azure.com/api/kubios/user-data';
   const token = localStorage.getItem('token');
   const headers = { Authorization: `Bearer ${token}` };
   const options = {

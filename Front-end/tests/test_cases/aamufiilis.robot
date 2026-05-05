@@ -2,7 +2,7 @@
 Documentation       Aamufiilis-toiminnon testit
 Library             SeleniumLibrary
 
-Suite Setup         Open Browser    https://kivi.server.swedencentral.cloudapp.azure.com/homepage.html    chrome
+Suite Setup         Open Browser    https://kivi-server.swedencentral.cloudapp.azure.com/homepage.html    chrome
 Suite Teardown      Close Browser
 
 *** Test Cases ***
