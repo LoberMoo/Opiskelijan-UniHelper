@@ -5,7 +5,7 @@ Variables env_loader.py
 *** Test Cases ***
 Test Web Form
     New Browser    chromium    headless=No
-    New Page       http://localhost:5173/
+    New Page       https://kivi.server.swedencentral.cloudapp.azure.com/
     Get Title      ==    Vite App
     Type Text      [name="username"]        ${USER}    delay=0.1 s
     Type Secret    [name="password"]    $PASS      delay=0.1 s

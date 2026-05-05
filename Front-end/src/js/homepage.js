@@ -6,7 +6,7 @@ const card = document.querySelector('.palautumis')
 // Palautumis arvon haku ja esitys funktio 
 const palautumis = async () => {
   // Backendiä varten kommunikoivan API:n linkki
-  const url = 'http://127.0.0.1:3000/api/kubios/user-data';
+  const url = 'https://kivi.server.swedencentral.cloudapp.azure.com/api/kubios/user-data';
   let headers = {};
   // Tokenin haku
   let token = localStorage.getItem('token');
