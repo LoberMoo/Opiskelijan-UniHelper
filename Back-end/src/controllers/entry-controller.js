@@ -1,5 +1,29 @@
 import {listAllEntries, findEntryById, addEntry, removeEntryById} from "../models/entry-model.js";
 
+/**
+ * @apiDefine AuthHeader
+ * @apiHeader {String} Authorization Bearer JWT token.
+ * @apiHeaderExample {json} Authorization Header:
+ *   { "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." }
+ */
+
+/**
+ * @apiDefine EntryNotFoundError
+ * @apiError (404) {String} message Entry not found.
+ * @apiErrorExample {json} 404 Not Found:
+ *   HTTP/1.1 404 Not Found
+ */
+
+/**
+ * @apiDefine InternalServerError
+ * @apiError (500) {Object} error Internal server error message from the database layer.
+ * @apiErrorExample {json} 500 Internal Server Error:
+ *   HTTP/1.1 500 Internal Server Error
+ *   {
+ *     "error": "Database connection failed"
+ *   }
+ */
+
 
 /**
  * @api {get} {api_url}/entries/ Get All Entries
@@ -25,6 +49,8 @@ import {listAllEntries, findEntryById, addEntry, removeEntryById} from "../model
  *   HTTP/1.1 200 OK
  *   [
  *     {
+ *       "entry_id": 12,
+ *       "user_id": 3,
  *       "entry_date": "2026-05-06",
  *       "mood": "Happy",
  *       "weight": 75,
@@ -35,7 +61,7 @@ import {listAllEntries, findEntryById, addEntry, removeEntryById} from "../model
  *
  * @apiUse InternalServerError
  *
- * @apiNote Returns an empty array `[]` if the user has no entries.
+ * @apiDescription Returns an empty array `[]` if the user has no entries.
  */
 
 const getEntries = async (req, res) => {
@@ -70,6 +96,8 @@ const getEntries = async (req, res) => {
  * @apiSuccessExample {json} 200 OK:
  *   HTTP/1.1 200 OK
  *   {
+ *     "entry_id": 12,
+ *     "user_id": 3,
  *     "entry_date": "2026-05-06",
  *     "mood": Happy,
  *     "weight": 75,
@@ -79,9 +107,9 @@ const getEntries = async (req, res) => {
  *
  * @apiUse EntryNotFoundError
  *
- * @apiNote This endpoint isn't used in the current version of the webapp because all the entires are fetched at the same time, there is current no function in the client to search for specific entries.
- *   No authorization check is performed; any authenticated or
- *   unauthenticated user can access entries by ID.
+ * @apiDescription This endpoint isn't used in the current version of the webapp because all the entires are fetched at the same time, there is current no function in the client to search for specific entries.
+ *  No authorization check is performed; any authenticated or
+ *  unauthenticated user can access entries by ID.
  */
 
 const getEntryById = async (req, res) => {
@@ -170,8 +198,8 @@ const postEntry = async (req, res) => {
  * @apiSuccessExample {text} 200 OK (Placeholder):
  *   HTTP/1.1 200 OK
  *
- * @apiNote This endpoint does not yet accept a request body or modify any data.
- *   Authentication requirements are also not yet defined.
+ * @apiDescription This endpoint does not yet accept a request body or modify any data.
+ *  Authentication requirements are also not yet defined.
  */
 
 const putEntry = (req, res) => {
@@ -206,8 +234,6 @@ const putEntry = (req, res) => {
  *     "message": "Entryä ei löytynyt"
  *   }
  *
- * @apiNote Response messages are currently only in Finnish.
- * Our deepest apologies for the inconvenience for any non-finnish speaker.
  */
 
 const deleteEntry = async (req, res) => {

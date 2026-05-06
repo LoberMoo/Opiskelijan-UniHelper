@@ -1,3 +1,5 @@
+import promisePool from '../utils/database.js';
+
 /**
  * @apiDefine DiaryEntryObject
  * @apiSuccess {Number}  entry_id      Auto-incremented primary key of the entry.
@@ -9,7 +11,17 @@
  * @apiSuccess {String}  [notes]       Free-text field, max length unspecified.
  */
 
-import promisePool from '../utils/database.js';
+/**
+ * @apiDefine DiaryEntryObject
+ * @apiSuccess {Number}  entry_id      Auto-incremented primary key of the entry.
+ * @apiSuccess {Number}  user_id       Foreign key referencing the owning user.
+ * @apiSuccess {String}  entry_date    Date of the entry (YYYY-MM-DD, from MySQL DATE column).
+ * @apiSuccess {Number}  [mood]        Mood rating stored as a numeric value. Valid range unspecified.
+ * @apiSuccess {Number}  [weight]      Body weight. Unit (kg/lbs) and precision unspecified.
+ * @apiSuccess {Number}  [sleep_hours] Hours of sleep. Precision (integer vs decimal) unspecified.
+ * @apiSuccess {String}  [notes]       Free-text field, max length unspecified.
+ */
+
 
 /**
  * @api {db} diaryentries/listAll List All Entries for a User
@@ -17,8 +29,8 @@ import promisePool from '../utils/database.js';
  * @apiName listAllEntries
  * @apiGroup EntryModel
  * @apiDescription Executes `SELECT * FROM diaryentries WHERE user_id = ?` using a
- *   parameterised prepared statement. Returns all diary entries belonging to `user_id`.
- *   Called internally by the `getEntries` controller.
+ *  parameterised prepared statement. Returns all diary entries belonging to `user_id`.
+ *  Called internally by the `getEntries` controller.
  *
  * @apiParam  {Number} user_id  ID of the user whose entries to retrieve (from JWT payload).
  *
@@ -41,9 +53,9 @@ import promisePool from '../utils/database.js';
  * @apiErrorExample {json} Resolved value (error):
  *   { "error": "ER_NO_SUCH_TABLE: Table 'db.diaryentries' doesn't exist" }
  *
- * @apiNote Returns `[]` (empty array) when no entries exist for the user, not an error object.
- * @apiNote The queries should match specifically what table names are set in SQL,
- *  unless you have set the `lower_case_table_names` setting in MySQL
+ * @apiDescription Returns `[]` (empty array) when no entries exist for the user, not an error object.
+ * The queries should match specifically what table names are set in SQL,
+ * unless you have set the `lower_case_table_names` setting in MySQL
  */
 
 const listAllEntries = async (user_id) => {
@@ -90,10 +102,10 @@ const listAllEntries = async (user_id) => {
  * @apiErrorExample {json} Resolved value (error):
  *   { "error": "ER_BAD_FIELD_ERROR: Unknown column 'entry_id'..." }
  *
- * @apiNote This endpoint isn't used in the current version of the webapp because all the entires are fetched at the same time, there is current no function in the client to search for specific entries.
- *   Returns `undefined` (not `null`) when no row is found.
- *   The controller checks truthiness: `if (entry)` — `undefined` is falsy,
- *   but so is `0` or `""`, so be careful with future return-value changes.
+ * @apiDescription This endpoint isn't used in the current version of the webapp because all the entires are fetched at the same time, there is current no function in the client to search for specific entries.
+ *  Returns `undefined` (not `null`) when no row is found.
+ *  The controller checks truthiness: `if (entry)` — `undefined` is falsy,
+ *  but so is `0` or `""`, so be careful with future return-value changes.
  */
 
 const findEntryById = async (id) => {
@@ -131,10 +143,10 @@ const findEntryById = async (id) => {
  * @apiErrorExample {json} Resolved value (error):
  *   { "error": "ER_DUP_ENTRY: Duplicate entry for key 'PRIMARY'" }
  *
- * @apiNote Optional fields (`mood`, `weight`, `sleep_hours`, `notes`) are passed
- *   directly to the parameterised query even when `undefined`. MySQL will store
- *   `NULL` for undefined values — ensure the table columns are nullable.
- * @apiNote The queries should match specifically what table names are set in SQL,
+ * @apiDescription Optional fields (`mood`, `weight`, `sleep_hours`, `notes`) are passed
+ *  directly to the parameterised query even when `undefined`. MySQL will store
+ *  `NULL` for undefined values — ensure the table columns are nullable.
+ *  The queries should match specifically what table names are set in SQL,
  *  unless you have set the `lower_case_table_names` setting in MySQL
  */
 const addEntry = async (entry) => {
@@ -174,10 +186,10 @@ const addEntry = async (entry) => {
  * @apiSuccessExample Resolved value (not found / wrong owner):
  *   0
  *
- * @apiNote Unlike other model functions, `removeEntryById` does NOT have a try/catch block.
- *   This is because in the client view, each entry has their own dynamically generated delete button that only works for that entry.
- *   Executing the API with an ID that doesn't exist with a test request would simply return a null and nothing would happen.
- *   Any database error will propagate as an unhandled rejection to the caller.
+ * @apiDescription Unlike other model functions, `removeEntryById` does NOT have a try/catch block.
+ *  This is because in the client view, each entry has their own dynamically generated delete button that only works for that entry.
+ *  Executing the API with an ID that doesn't exist with a test request would simply return a null and nothing would happen.
+ *  Any database error will propagate as an unhandled rejection to the caller.
  */
 
 const removeEntryById = async(entryId, userId) => {

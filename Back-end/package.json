@@ -35,8 +35,8 @@
     "uuid": "^13.0.0"
   },
   "apidoc": {
-  "title": "My API docs",
-  "name": "My API docs",
+  "title": "Opiskelijan-UniHelper APIdocs",
+  "name": "Opiskelija-UniHelper APIdocs",
   "url": "https://kivi-server.swedencentral.cloudapp.azure.com/api",
   "order": [
     "Authentication",
