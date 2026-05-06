@@ -28,7 +28,7 @@
 
 
 <div class="window">
-
+    <!-- pääikkuna, jossa kysely näytetään -->
     <div class="titlebar">
         PSQI Unenlaatuindeksi
     </div>
@@ -36,6 +36,7 @@
     <div class="content">
 
         <!-- SIVU 1 -->
+         <!-- nukkumaanmeno, nukahtamisaika, herääminen ja unen kesto -->
         <div class="page active" id="page1">
             <h3>Nukkuminen</h3>
 
@@ -67,6 +68,7 @@
 
 
         <!-- SIVU 2 -->
+         <!-- unen keskeytyksistä ja ongelmia -->
         <div class="page" id="page2">
             <h3>Unihäiriöt</h3>
 
@@ -97,6 +99,7 @@
 
 
         <!-- SIVU 3 -->
+         <!-- oma arvio unen laadusta ja vaikutuksista -->
         <div class="page" id="page3">
             <h3>Arvio</h3>
 
@@ -154,8 +157,7 @@
         
     </div>
 </div>
-
+<!-- js hoitaa sivujen vaihdon ja pisteiden laskennan -->
 <script src="src/js/psqi.js"></script>
-
 </body>
 </html>

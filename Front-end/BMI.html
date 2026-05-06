@@ -14,6 +14,7 @@
     <span class="kayttajatunnus">Hei <span class="username"></span>!</span>
   </nav>
 
+  <!-- sivupalkki joka aukeaa "hamburger"-napista -->
   <div class="sidebar" id="sidebar">
       <ul>
         <li><a href="homepage.html">Koti</a></li>
@@ -25,11 +26,14 @@
       <a id="logout" href="index.html">Kirjaudu ulos</a>
     </div>
 
+  <!-- pääsisältö -->
   <div class="main">
     <h2 style="text-align:center; margin-bottom:16px">Painoindeksi</h2>
 
+    <!-- BMI asteikot kuva -->
     <img src="/src/img/bmiskaala.png" style="width:100%; border-radius:6px; margin-bottom:20px">
 
+    <!-- syöttökentät  ja laskuri-->
     <div class="card">
       <div class="laskuri-rivi">
         <div class="kentat">
@@ -37,11 +41,13 @@
           <p>Paino <input type="number" id="weight" placeholder="kg"> kg</p>
           <div style="display:flex; align-items:center; gap:10px; margin-top:10px">
             <button onclick="laskeBMI()">Laske</button>
+            <!-- hoverattava info-pallo -->
             <div class="info-pallo">i
               <div class="info-tooltip">Ylipaino heikentää unenlaatua ja lisää uniapnean riskiä. Painoindeksin seuranta auttaa tunnistamaan terveysriskit ajoissa.</div>
             </div>
           </div>
         </div>
+        <!-- tulos alue -->
         <div class="tulos-alue">
           <p id="bmiTulos">BMI = xx.x</p>
           <p id="bmiLuokka"></p>
@@ -50,19 +56,37 @@
     </div>
   </div>
   <script>
+    // laskee BMI:n syötetyistä arvoista ja näyttää tuloksen värin mukaan
     function laskeBMI() {
-  const h = document.getElementById('height').value / 100
-  const w = document.getElementById('weight').value
-  if (!h || !w) return
-  const bmi = (w / (h * h)).toFixed(1)
-  document.getElementById('bmiTulos').textContent = 'BMI = ' + bmi
-  const el = document.getElementById('bmiLuokka')
-  el.className = ''
-  if (bmi < 18.5) { el.textContent = 'Alipaino'; el.classList.add('alipaino') }
-  else if (bmi < 25) { el.textContent = 'Normaali paino'; el.classList.add('normaali') }
-  else if (bmi < 30) { el.textContent = 'Ylipaino'; el.classList.add('ylipaino') }
-  else { el.textContent = 'Merkittävä ylipaino'; el.classList.add('merkittava') }
-}
+      const h = document.getElementById('height').value / 100
+      const w = document.getElementById('weight').value
+      if (!h || !w) return
+      
+      const bmi = (w / (h * h)).toFixed(1)
+      document.getElementById('bmiTulos').textContent = 'BMI = ' + bmi
+      
+      const el = document.getElementById('bmiLuokka')
+      el.className = ''
+
+      if (bmi < 18.5) {
+        el.textContent = 'Alipaino'; el.classList.add('alipaino')
+      }
+
+      else if (bmi < 25) {
+        el.textContent = 'Normaali paino';
+        el.classList.add('normaali')
+      }
+
+      else if (bmi < 30) {
+        el.textContent = 'Ylipaino';
+        el.classList.add('ylipaino')
+      }
+
+      else {
+        el.textContent = 'Merkittävä ylipaino';
+        el.classList.add('merkittava')
+      } 
+    } 
 // Hakee käyttäjän nimen joka on local storagessa, jos nimeä ei ole niin ohjelma antaa käyttäjälle nimen "vieras"
 // Käyttäjän nimi (joka on vain sähköposti osoite) näytetään sivun oikeassa yläkulmassa
 let name = localStorage.getItem('name');
