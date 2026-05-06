@@ -12,10 +12,11 @@ Metropolia AMK:n Hyvinvointi- ja terveysteknologian RYHMÄ 3 ryhmätyö kevät 2
 
 > *<img width="2860" height="1540" alt="index" src="https://github.com/user-attachments/assets/12798062-cc27-4d3c-9a9a-5e01d087ce4b" />*
 > *<img width="2940" height="1705" alt="homepage" src="https://github.com/user-attachments/assets/1ce3eda8-8a77-4cbf-a586-39ecf406d05c" />*
-> * <img width="2940" height="1612" alt="psqi" src="https://github.com/user-attachments/assets/50705d83-9d9b-428f-a701-48bd8a3c9ce7" />*
+> *<img width="233" height="799" alt="hamburger" src="https://github.com/user-attachments/assets/e5bc606f-3906-40b7-bde6-b7a2b2ca9c35" />*
+> *<img width="2940" height="1612" alt="psqi" src="https://github.com/user-attachments/assets/50705d83-9d9b-428f-a701-48bd8a3c9ce7" />*
 > *<img width="2940" height="1512" alt="bmi" src="https://github.com/user-attachments/assets/c9cdafd7-2f4e-442e-b8a8-45990fdea0e2" />*
-> * <img width="2940" height="1538" alt="diary" src="https://github.com/user-attachments/assets/6c4cb606-80de-4e25-84e8-cd15e01dcbbf" />*
-> * <img width="2940" height="1544" alt="feedback" src="https://github.com/user-attachments/assets/015e924b-3e7b-4d9f-848b-66dc8f0d9ea7" />*
+> *<img width="2940" height="1538" alt="diary" src="https://github.com/user-attachments/assets/6c4cb606-80de-4e25-84e8-cd15e01dcbbf" />*
+> *<img width="2940" height="1544" alt="feedback" src="https://github.com/user-attachments/assets/015e924b-3e7b-4d9f-848b-66dc8f0d9ea7" />*
 
 ## Rautalankamalli(t)
 > *<img width="341" height="201" alt="image" src="https://github.com/user-attachments/assets/0c628ea6-1717-4c9a-bc7c-5fd163619031" />*
