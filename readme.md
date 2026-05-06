@@ -10,15 +10,16 @@ Metropolia AMK:n Hyvinvointi- ja terveysteknologian RYHMÄ 3 ryhmätyö kevät 2
 
 ## Kuvakaappaukset
 
-> *(kuvakaappaukset)*
+> *sovelluksesta*
 
 ## Rautalankamalli(t)
+> *<img width="341" height="201" alt="image" src="https://github.com/user-attachments/assets/0c628ea6-1717-4c9a-bc7c-5fd163619031" />*
 
-> *(mallit)*
+> *<img width="1920" height="1080" alt="HYTEPROJEKTI (1)" src="https://github.com/user-attachments/assets/85cd7627-f79c-43bf-9d0a-12c49905c203" />*
 
 ## Tietokanta
 
-> *( kuva rakenteesta)*
+> *kuva rakenteesta*
 
 ## Toiminnallisuudet
 
