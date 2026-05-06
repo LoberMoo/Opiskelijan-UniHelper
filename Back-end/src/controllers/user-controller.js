@@ -2,8 +2,9 @@ import bcrypt from 'bcryptjs';
 import { findUserByUsername, getUsers, getUserbyId, addUser } from "../models/user-model.js";
 import jwt from 'jsonwebtoken';
 
-//TODO: Fix everything I guess?
-// Get users?
+
+// Everything here is basically reduntant as none of it is being used in the final version
+// User related
 
 const haeuserit = async (req, res) => {
   const result = await getUsers();

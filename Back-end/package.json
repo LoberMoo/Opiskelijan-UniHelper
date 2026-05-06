@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "apidoc": "apidoc -i src/ -o docs/"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
@@ -20,6 +21,7 @@
     "prettier": "3.7.4"
   },
   "dependencies": {
+    "apidoc": "^1.2.0",
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
     "dotenv": "^17.2.3",
@@ -31,6 +33,14 @@
     "node": "^25.8.2",
     "node-fetch": "^3.3.2",
     "uuid": "^13.0.0"
-  }
+  },
+  "apidoc": {
+  "title": "My API docs",
+  "name": "My API docs",
+  "url": "https://kivi-server.swedencentral.cloudapp.azure.com/api",
+  "order": [
+    "Authentication",
+    "User"
+  ]
 }
-
+}

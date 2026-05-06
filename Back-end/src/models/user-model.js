@@ -3,6 +3,7 @@ import promisePool from '../utils/database.js';
 
 
 // GET /api/users - list all users
+// Unused other than for test requests, not in the final iteration
 const getUsers = async () => {
   try {
   const [rows] = await promisePool.query('SELECT username from users;');
@@ -41,7 +42,7 @@ const addUser = async (user) => {
   };
 }
 
-// virheenkäsittely not existing
+// Unused other than for test requests, not in the final iteration
 const findUserByUsername = async (username) => {
   const sql = 'SELECT * FROM Users WHERE username = ?';
   const [rows] = await promisePool.execute(sql, [username]);
