@@ -6,8 +6,6 @@
 <br>
 Automaatiotestaus logit ja raportit löytyvät näistä linkeistä:
 <br>
-
-<a href="https://lobermoo.github.io/Opiskelijan-UniHelper/Front-end/tests/docs/testaussuunnitelma.md">Testaussuunnitelma</a>
 <br>
 Automaatiotestit:
 <br>
