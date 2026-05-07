@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-05-07T19:14:45.115472" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\tests\test_cases\login.robot">
+<test id="s1-t1" name="Testaa Kirjatumista sivustolle" line="7">
+<kw name="New Browser" owner="Browser">
+<msg time="2026-05-07T19:14:45.480341" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\PaskaL\u00e4pp\u00e4ri\\Documents\\Metropolia\\hyte\\the-big-one\\Front-End\\tests\\docs\\login-test\\browser\\traces\\temp\\c1b56097-e0f9-4779-ab84-9e75080da6b5"}</msg>
+<msg time="2026-05-07T19:14:45.514794" level="INFO">Starting Browser process C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\.venv\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:52706</msg>
+<msg time="2026-05-07T19:14:46.930298" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\PaskaLäppäri\\Documents\\Metropolia\\hyte\\the-big-one\\Front-End\\tests\\docs\\login-test\\browser\\traces\\temp\\c1b56097-e0f9-4779-ab84-9e75080da6b5"}</msg>
+<arg>chromium</arg>
+<arg>headless=No</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-05-07T19:14:45.479373" elapsed="1.451227"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2026-05-07T19:14:47.625379" level="INFO">Successfully initialized new page object and opened url: https://kivi-server.swedencentral.cloudapp.azure.com/</msg>
+<msg time="2026-05-07T19:14:47.625982" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://kivi-server.swedencentral.cloudapp.azure.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-05-07T19:14:46.964549" elapsed="0.662192"/>
+</kw>
+<kw name="Get Title" owner="Browser">
+<msg time="2026-05-07T19:14:47.647376" level="INFO">Title: 'Vite App'</msg>
+<arg>==</arg>
+<arg>Vite App</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2026-05-07T19:14:47.632084" elapsed="0.015484"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2026-05-07T19:14:47.650613" level="INFO">Types the text 'joni.kaukinen06@gmail.com' in the given field.</msg>
+<arg>[name="username"]</arg>
+<arg>${USER}</arg>
+<arg>delay=0.01 s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-05-07T19:14:47.649208" elapsed="0.525426"/>
+</kw>
+<kw name="Type Secret" owner="Browser">
+<arg>[name="password"]</arg>
+<arg>$PASSWORD</arg>
+<arg>delay=0.01 s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given secret from ``variable_name`` into the text field
+found by ``selector``.</doc>
+<status status="PASS" start="2026-05-07T19:14:48.176186" elapsed="0.180068"/>
+</kw>
+<kw name="Click With Options" owner="Browser">
+<msg time="2026-05-07T19:14:48.358840" level="INFO">Clicks the element '[name="submit"]'.</msg>
+<arg>[name="submit"]</arg>
+<arg>delay=0.5 s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-05-07T19:14:48.357290" elapsed="0.602456"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-07T19:14:52.062228" level="INFO">Slept 3 seconds 100 milliseconds.</msg>
+<arg>3.1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-07T19:14:48.960737" elapsed="3.101871"/>
+</kw>
+<kw name="Get Title" owner="Browser">
+<msg time="2026-05-07T19:14:52.077723" level="INFO">Title: 'UniHelper'</msg>
+<arg>==</arg>
+<arg>UniHelper</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2026-05-07T19:14:52.063383" elapsed="0.014685"/>
+</kw>
+<kw name="Close Browser" owner="Browser">
+<msg time="2026-05-07T19:14:52.629823" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-05-07T19:14:52.079226" elapsed="0.551169"/>
+</kw>
+<status status="PASS" start="2026-05-07T19:14:45.478030" elapsed="7.154085"/>
+</test>
+<doc>Salainen kirjautuminen terveys websovellukseen</doc>
+<status status="PASS" start="2026-05-07T19:14:45.117809" elapsed="7.524275"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="1" fail="0" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-05-07T19:15:53.916644" rpa="false" schemaversion="5">
+<suite id="s1" name="Entry" source="C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\tests\test_cases\entry.robot">
+<test id="s1-t1" name="Avaa selain" line="13">
+<kw name="New Browser" owner="Browser">
+<msg time="2026-05-07T19:15:54.218620" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\PaskaL\u00e4pp\u00e4ri\\Documents\\Metropolia\\hyte\\the-big-one\\Front-End\\tests\\docs\\entry-test\\browser\\traces\\temp\\6bb3698a-3199-4c19-b36d-56295f1bed8c"}</msg>
+<msg time="2026-05-07T19:15:54.249288" level="INFO">Starting Browser process C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\.venv\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:55548</msg>
+<msg time="2026-05-07T19:15:55.584353" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\PaskaLäppäri\\Documents\\Metropolia\\hyte\\the-big-one\\Front-End\\tests\\docs\\entry-test\\browser\\traces\\temp\\6bb3698a-3199-4c19-b36d-56295f1bed8c"}</msg>
+<arg>chromium</arg>
+<arg>headless=No</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-05-07T19:15:54.217690" elapsed="1.367275"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2026-05-07T19:15:56.432372" level="INFO">Successfully initialized new page object and opened url: https://kivi-server.swedencentral.cloudapp.azure.com/paivakirja.html</msg>
+<msg time="2026-05-07T19:15:56.432631" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://kivi-server.swedencentral.cloudapp.azure.com/paivakirja.html</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-05-07T19:15:55.606418" elapsed="0.826925"/>
+</kw>
+<status status="PASS" start="2026-05-07T19:15:54.216512" elapsed="2.222725"/>
+</test>
+<test id="s1-t2" name="Lisää päiväkirjamerkintä" line="17">
+<kw name="Click With Options" owner="Browser">
+<msg time="2026-05-07T19:15:56.461076" level="INFO">Clicks the element '[class="add_diary_button"]'.</msg>
+<arg>[class="add_diary_button"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-05-07T19:15:56.455963" elapsed="0.121906"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2026-05-07T19:15:56.583163" level="INFO">Types the text 'Hyvä' in the given field.</msg>
+<arg>[name="mood"]</arg>
+<arg>${Olotila}</arg>
+<arg>delay=0.05s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-05-07T19:15:56.579103" elapsed="0.281464"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2026-05-07T19:15:56.863294" level="INFO">Types the text '68.8' in the given field.</msg>
+<arg>[name="weight"]</arg>
+<arg>${Paino}</arg>
+<arg>delay=0.05s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-05-07T19:15:56.861624" elapsed="0.319741"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2026-05-07T19:15:57.184332" level="INFO">Types the text '8' in the given field.</msg>
+<arg>[name="sleep"]</arg>
+<arg>${Uni-maara}</arg>
+<arg>delay=0.05s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-05-07T19:15:57.182508" elapsed="0.124739"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2026-05-07T19:15:57.309987" level="INFO">Types the text 'Kävin lenkillä tänään' in the given field.</msg>
+<arg>[name="notes"]</arg>
+<arg>${Notes}</arg>
+<arg>delay=0.05s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-05-07T19:15:57.308365" elapsed="1.369913"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-07T19:15:59.680215" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-07T19:15:58.678812" elapsed="1.001744"/>
+</kw>
+<kw name="Click With Options" owner="Browser">
+<msg time="2026-05-07T19:15:59.683356" level="INFO">Clicks the element '[class="add_entry"]'.</msg>
+<arg>[class="add_entry"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-05-07T19:15:59.681468" elapsed="0.052794"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-07T19:16:01.736946" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-07T19:15:59.735301" elapsed="2.001948"/>
+</kw>
+<kw name="Click With Options" owner="Browser">
+<msg time="2026-05-07T19:16:01.740689" level="INFO">Clicks the element '[class="close_add_entry"]'.</msg>
+<arg>[class="close_add_entry"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-05-07T19:16:01.738259" elapsed="0.025486"/>
+</kw>
+<status status="PASS" start="2026-05-07T19:15:56.449624" elapsed="5.315027"/>
+</test>
+<test id="s1-t3" name="Sulje selain" line="28">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-07T19:16:03.778085" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-07T19:16:01.776323" elapsed="2.002105"/>
+</kw>
+<kw name="Close Browser" owner="Browser">
+<msg time="2026-05-07T19:16:04.309608" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-05-07T19:16:03.779600" elapsed="0.530421"/>
+</kw>
+<status status="PASS" start="2026-05-07T19:16:01.774526" elapsed="2.536522"/>
+</test>
+<doc>Merkinnän lisäämis robotti</doc>
+<status status="PASS" start="2026-05-07T19:15:53.918981" elapsed="10.402666"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Entry" id="s1" pass="3" fail="0" skip="0">Entry</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

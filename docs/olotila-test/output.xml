@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-05-07T19:15:32.887839" rpa="false" schemaversion="5">
+<suite id="s1" name="Olotila" source="C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\tests\test_cases\olotila.robot">
+<test id="s1-t1" name="Avaa selain" line="9">
+<kw name="New Browser" owner="Browser">
+<msg time="2026-05-07T19:15:33.184958" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\PaskaL\u00e4pp\u00e4ri\\Documents\\Metropolia\\hyte\\the-big-one\\Front-End\\tests\\docs\\olotila-test\\browser\\traces\\temp\\61803f1d-db42-48b4-a038-5b42d5fb13fe"}</msg>
+<msg time="2026-05-07T19:15:33.222193" level="INFO">Starting Browser process C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\.venv\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:56064</msg>
+<msg time="2026-05-07T19:15:34.572052" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\PaskaLäppäri\\Documents\\Metropolia\\hyte\\the-big-one\\Front-End\\tests\\docs\\olotila-test\\browser\\traces\\temp\\61803f1d-db42-48b4-a038-5b42d5fb13fe"}</msg>
+<arg>chromium</arg>
+<arg>headless=No</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-05-07T19:15:33.183991" elapsed="1.388388"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2026-05-07T19:15:35.350051" level="INFO">Successfully initialized new page object and opened url: https://kivi-server.swedencentral.cloudapp.azure.com/homepage.html</msg>
+<msg time="2026-05-07T19:15:35.350218" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://kivi-server.swedencentral.cloudapp.azure.com/homepage.html</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-05-07T19:15:34.591802" elapsed="0.758717"/>
+</kw>
+<status status="PASS" start="2026-05-07T19:15:33.182759" elapsed="2.168853"/>
+</test>
+<test id="s1-t2" name="Anna fiilis" line="13">
+<kw name="Click With Options" owner="Browser">
+<msg time="2026-05-07T19:15:35.379011" level="INFO">Clicks the element '[id=p5]'.</msg>
+<arg>[id=p5]</arg>
+<arg>delay=0.5 s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-05-07T19:15:35.377970" elapsed="0.616792"/>
+</kw>
+<status status="PASS" start="2026-05-07T19:15:35.377313" elapsed="0.618566"/>
+</test>
+<test id="s1-t3" name="Sulje ikkuna" line="16">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-07T19:15:38.012524" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-07T19:15:36.006501" elapsed="2.006317"/>
+</kw>
+<kw name="Close Browser" owner="Browser">
+<msg time="2026-05-07T19:15:38.434813" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-05-07T19:15:38.013858" elapsed="0.421501"/>
+</kw>
+<status status="PASS" start="2026-05-07T19:15:36.004648" elapsed="2.431369"/>
+</test>
+<doc>Olotilan antamis testi</doc>
+<status status="PASS" start="2026-05-07T19:15:32.890207" elapsed="5.550947"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Olotila" id="s1" pass="3" fail="0" skip="0">Olotila</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

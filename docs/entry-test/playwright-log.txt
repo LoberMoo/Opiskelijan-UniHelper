@@ -1,0 +1,62 @@
+{"level":30,"time":"2026-05-07T16:15:54.969Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Listening on 127.0.0.1:55548"}
+{"level":30,"time":"2026-05-07T16:15:55.291Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2026-05-07T16:15:55.535Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Adding browser to stack: chromium, version: 147.0.7727.15"}
+{"level":30,"time":"2026-05-07T16:15:55.536Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2026-05-07T16:15:55.536Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"End of node method newBrowser"}
+{"level":30,"time":"2026-05-07T16:15:55.598Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Start of node method newPage"}
+{"level":30,"time":"2026-05-07T16:15:55.599Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"currentBrowser: {\"_contextStack\":[],\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@61a2d9f6aed39461f3309ac341a879fc\"},\"name\":\"chromium\",\"id\":\"browser=38ac3562-a691-489b-a154-06de70c845da\",\"headless\":false}"}
+{"level":30,"time":"2026-05-07T16:15:55.652Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Setting default timeout for context context=dbdf8ecc-3038-46ab-9616-8b16e59d0c95 to 10000"}
+{"level":30,"time":"2026-05-07T16:15:55.652Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Changed active context: context=dbdf8ecc-3038-46ab-9616-8b16e59d0c95"}
+{"level":30,"time":"2026-05-07T16:15:55.970Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Video path: undefined"}
+{"level":30,"time":"2026-05-07T16:15:55.970Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Changed active page"}
+{"level":30,"time":"2026-05-07T16:15:56.413Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"End of node method newPage"}
+{"level":30,"time":"2026-05-07T16:15:56.453Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Start of node method click"}
+{"level":30,"time":"2026-05-07T16:15:56.453Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Strict mode is enabled, find Locator with [class=\"add_diary_button\"] in page."}
+{"level":30,"time":"2026-05-07T16:15:56.560Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"End of node method click"}
+{"level":30,"time":"2026-05-07T16:15:56.575Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Start of node method typeText"}
+{"level":30,"time":"2026-05-07T16:15:56.575Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Strict mode is enabled, find Locator with [name=\"mood\"] in page."}
+{"level":30,"time":"2026-05-07T16:15:56.843Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"End of node method typeText"}
+{"level":30,"time":"2026-05-07T16:15:56.854Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Start of node method typeText"}
+{"level":30,"time":"2026-05-07T16:15:56.854Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Strict mode is enabled, find Locator with [name=\"weight\"] in page."}
+{"level":30,"time":"2026-05-07T16:15:57.167Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"End of node method typeText"}
+{"level":30,"time":"2026-05-07T16:15:57.175Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Start of node method typeText"}
+{"level":30,"time":"2026-05-07T16:15:57.175Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Strict mode is enabled, find Locator with [name=\"sleep\"] in page."}
+{"level":30,"time":"2026-05-07T16:15:57.293Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"End of node method typeText"}
+{"level":30,"time":"2026-05-07T16:15:57.301Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Start of node method typeText"}
+{"level":30,"time":"2026-05-07T16:15:57.301Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Strict mode is enabled, find Locator with [name=\"notes\"] in page."}
+{"level":30,"time":"2026-05-07T16:15:58.665Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"End of node method typeText"}
+{"level":30,"time":"2026-05-07T16:15:59.675Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Start of node method click"}
+{"level":30,"time":"2026-05-07T16:15:59.675Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Strict mode is enabled, find Locator with [class=\"add_entry\"] in page."}
+{"level":30,"time":"2026-05-07T16:15:59.721Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"End of node method click"}
+{"level":30,"time":"2026-05-07T16:16:01.732Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Start of node method click"}
+{"level":30,"time":"2026-05-07T16:16:01.732Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Strict mode is enabled, find Locator with [class=\"close_add_entry\"] in page."}
+{"level":30,"time":"2026-05-07T16:16:01.749Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"End of node method click"}
+{"level":30,"time":"2026-05-07T16:16:03.774Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2026-05-07T16:16:03.796Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"Removed page=14158ef5-f4f0-41a9-852b-20799db208a4 from context=dbdf8ecc-3038-46ab-9616-8b16e59d0c95 page stack"}
+{"level":30,"time":"2026-05-07T16:16:04.295Z","pid":9200,"hostname":"DESKTOP-BV15V5M","msg":"End of node method closeBrowser"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\.venv\Lib\site-packages\Browser\wrapper\index.js:8777:13)
+    at PlaywrightServer.getActiveBrowser (C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\.venv\Lib\site-packages\Browser\wrapper\index.js:9689:52)
+    at PlaywrightServer.setTimeout (C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\.venv\Lib\site-packages\Browser\wrapper\index.js:9887:56)
+    at Object.onReceiveHalfClose (C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\.venv\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\.venv\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\.venv\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\.venv\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+=============================================================
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\.venv\Lib\site-packages\Browser\wrapper\index.js:8777:13)
+    at PlaywrightServer.getActiveBrowser (C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\.venv\Lib\site-packages\Browser\wrapper\index.js:9689:52)
+    at PlaywrightServer.setTimeout (C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\.venv\Lib\site-packages\Browser\wrapper\index.js:9887:56)
+    at Object.onReceiveHalfClose (C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\.venv\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\.venv\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\.venv\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\PaskaLäppäri\Documents\Metropolia\hyte\the-big-one\Front-End\.venv\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+=============================================================
