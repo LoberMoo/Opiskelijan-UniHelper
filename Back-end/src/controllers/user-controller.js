@@ -4,7 +4,7 @@ import { getUsers, getUserbyId, addUser } from "../models/user-model.js";
 /**
  * @apiDefine UserGroup Users
  * Endpoints that manage user accounts, registration, and lookup.
- * These routes are mounted under <code>{api_url}/api/users</code>.
+ * These routes are mounted under <code>/api/users</code>.
  */
 
 /**
@@ -28,10 +28,10 @@ import { getUsers, getUserbyId, addUser } from "../models/user-model.js";
 
 
 /**
- * @api {get} {api_url}/api/users Hae kaikki käyttäjät (testikäyttö)
- * @apiVersion 1.0.0
+ * @api {get} users Get All Users (Testuse only)
+ * @apiVersion 1.2.0
  * @apiName GetUsers
- * @apiGroup UserGroup
+ * @apiGroup User group
  *
  * @apiDescription
  * Returns a list of all usernames stored in the database.
@@ -70,10 +70,10 @@ const haeuserit = async (req, res) => {
 };
 
 /**
- * @api {get} {api_url}/api/users/:id Hae käyttäjä ID:llä (testikäyttö)
- * @apiVersion 1.0.0
+ * @api {get} users/:id Get User by ID (Testuse only)
+ * @apiVersion 1.2.0
  * @apiName GetUserById
- * @apiGroup UserGroup
+ * @apiGroup User group
  *
  * @apiDescription
  * Returns the username of a single user identified by their numeric
@@ -114,10 +114,10 @@ const haeuserbyId = async (req, res) => {
 };
 
 /**
- * @api {post} {api_url}/api/users Luo uusi käyttäjä
- * @apiVersion 1.0.0
+ * @api {post} users Create New User
+ * @apiVersion 1.2.0
  * @apiName PostUser
- * @apiGroup UserGroup
+ * @apiGroup User group
  *
  * @apiDescription
  * Creates a new user account in the database. The plaintext password

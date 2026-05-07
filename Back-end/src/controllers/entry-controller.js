@@ -26,10 +26,10 @@ import {listAllEntries, findEntryById, addEntry, removeEntryById} from "../model
 
 
 /**
- * @api {get} {api_url}/entries/ Get All Entries
- * @apiVersion 1.0.0
+ * @api {get} entries/ Get All Entries
+ * @apiVersion 1.2.0
  * @apiName GetEntries
- * @apiGroup Entries
+ * @apiGroup Entry group
  * @apiDescription Retrieves all diary entries belonging to the currently authenticated user.
  *   The user is identified via the JWT token attached to the request.
  *   Only entries that match the token's `user_id` are returned.
@@ -41,8 +41,8 @@ import {listAllEntries, findEntryById, addEntry, removeEntryById} from "../model
  * @apiSuccess {Number}   entries.user_id     ID of the user who owns the entry.
  * @apiSuccess {String}   entries.entry_date  Date of the diary entry (YYYY-MM-DD).
  * @apiSuccess {String}   [entries.mood]      Mood rating (Can be anything the user desires, whether it's a number from 1 to 10 or just a simple description of their mood like "Happy").
- * @apiSuccess {Number}   [entries.weight]    Body weight recorded for the day. (whole number, preferrably in Kg as that's what is displayed in the client view)
- * @apiSuccess {Number}   [entries.sleep_hours] Hours of sleep recorded (whole number for hours of sleep, will round up or down to the closest integer in case of floats).
+ * @apiSuccess {Number}   [entries.weight]    Body weight recorded for the day. (Decimal number if needed, preferrably in Kg as that's what is displayed in the client view)
+ * @apiSuccess {Number}   [entries.sleep_hours] Hours of sleep recorded (whole number for hours of sleep, will round up or down to the closest integer in case of decimal numbers).
  * @apiSuccess {String}   [entries.notes]     Free-text notes for the entry. (There is no limit for what you can write)
  *
  * @apiSuccessExample {json} 200 OK:
@@ -75,10 +75,10 @@ const getEntries = async (req, res) => {
 };
 
 /**
- * @api {get} {api_url}/entries/:id Get Entry by ID
- * @apiVersion 1.0.0
+ * @api {get} entries/:id Get Entry by ID
+ * @apiVersion 1.2.0
  * @apiName GetEntryById
- * @apiGroup Entries
+ * @apiGroup Entry group
  * @apiDescription Retrieves a single diary entry by its unique `entry_id`.
  *   This endpoint does NOT require authentication, meaning any caller who
  *   knows a valid `entry_id` can retrieve that entry regardless of ownership.
@@ -89,7 +89,7 @@ const getEntries = async (req, res) => {
  * @apiSuccess {Number}  user_id      ID of the user who owns the entry.
  * @apiSuccess {String}  entry_date   Date of the diary entry (YYYY-MM-DD).
  * @apiSuccess {String}   [entries.mood]      Mood rating (Can be anything the user desires, whether it's a number from 1 to 10 or just a simple description of their mood like "Happy").
- * @apiSuccess {Number}   [entries.weight]    Body weight recorded for the day. (whole number, preferrably in Kg as that's what is displayed in the client view)
+ * @apiSuccess {Number}   [entries.weight]    Body weight recorded for the day. (Can be in decimals, preferrably in Kg as that's what is displayed in the client view)
  * @apiSuccess {Number}   [entries.sleep_hours] Hours of sleep recorded (whole number for hours of sleep, will round up or down to the closest integer in case of floats).
  * @apiSuccess {String}   [entries.notes]     Free-text notes for the entry. (There is no limit for what you can write)
  *
@@ -122,10 +122,10 @@ const getEntryById = async (req, res) => {
 };
 
 /**
- * @api {post} {api_url}/entries/ Create New Entry
- * @apiVersion 1.0.0
+ * @api {post} entries/ Create New Entry
+ * @apiVersion 1.2.0
  * @apiName PostEntry
- * @apiGroup Entries
+ * @apiGroup Entry group
  * @apiDescription Creates a new diary entry for the authenticated user.
  *   `entry_date` is mandatory. At least one of `mood`, `weight`, `sleep_hours`,
  *   or `notes` must also be present. The `user_id` is taken from the JWT token.
@@ -133,10 +133,10 @@ const getEntryById = async (req, res) => {
  * @apiUse AuthHeader
  *
  * @apiBody {String}  entry_date             Date of the entry (YYYY-MM-DD). **Required, but automatically aquired in the client so it doesn't need user input.**
- * @apiBody {String}  [mood]                 Mood rating. **Required**
- * @apiBody {Number}  [weight]               Body weight as an integer. **Required**
- * @apiBody {Number}  [sleep_hours]          Hours of sleep as an integer. **Required**
- * @apiBody {String}  [notes]                Free-text notes. **Required**
+ * @apiBody {String}  [mood]                 Mood rating.
+ * @apiBody {Number}  [weight]               Body weight as a decimal.
+ * @apiBody {Number}  [sleep_hours]          Hours of sleep as an integer.
+ * @apiBody {String}  [notes]                Free-text notes.
  *
  * @apiParamExample {json} Request Body:
  *   {
@@ -185,10 +185,10 @@ const postEntry = async (req, res) => {
 };
 
 /**
- * @api {put} /entries/:id Update Entry (Not Yet Implemented)
- * @apiVersion 1.0.0
+ * @api {put} entries/:id Update Entry (Not Yet Implemented)
+ * @apiVersion 1.2.0
  * @apiName PutEntry
- * @apiGroup Entries
+ * @apiGroup Entry group
  * @apiDescription Placeholder for a future update-entry implementation.
  *   Currently returns `200 OK` without performing any operation.
  *
@@ -208,17 +208,17 @@ const putEntry = (req, res) => {
 };
 
 /**
- * @api {delete} {api_url}/entries/:id Delete Entry
- * @apiVersion 1.0.0
+ * @api {delete} entries/:id Delete Entry
+ * @apiVersion 1.2.0
  * @apiName DeleteEntry
- * @apiGroup Entries
+ * @apiGroup Entry group
  * @apiDescription Deletes a diary entry by its ID. The entry must belong to the
  *   authenticated user — the query matches both `entry_id` and `user_id`, so
  *   users cannot delete entries owned by others.
  *
  * @apiUse AuthHeader
  *
- * @apiParam {api_url}/entries/{Number} id  The unique numeric ID of the entry (URL path parameter).
+ * @apiParam /entries/{Number} id  The unique numeric ID of the entry (URL path parameter).
  *
  * @apiSuccess (200) {String} message Confirmation that the entry was removed.
  * @apiSuccessExample {json} 200 OK:

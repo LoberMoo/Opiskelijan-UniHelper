@@ -3,4 +3,3 @@ node_modules/
 .env
 secret_requests.http
 test-req.http
-docs/

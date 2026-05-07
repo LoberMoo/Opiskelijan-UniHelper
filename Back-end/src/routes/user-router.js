@@ -32,10 +32,10 @@
 
 
 /**
- * @api {get} {api_url}/api/users Hae kaikki käyttäjät
- * @apiVersion 1.0.0
+ * @api {get} users Get All Users
+ * @apiVersion 1.2.0
  * @apiName GetAllUsers
- * @apiGroup Users API
+ * @apiGroup User group
  *
  * @apiDescription
  * Returns a list of all usernames currently registered in the database.
@@ -69,10 +69,10 @@
 
 
   /**
- * @api {post} {api_url}/api/users Luo uusi käyttäjä
- * @apiVersion 1.0.0
+ * @api {post} users Create New User
+ * @apiVersion 1.2.0
  * @apiName PostUser
- * @apiGroup Users API
+ * @apiGroup User group
  *
  * @apiDescription
  * Creates a new user account. The request body is validated by
@@ -147,10 +147,10 @@
 
 
 /**
- * @api {get} {api_url}/api/users/:id Hae käyttäjä ID:llä
- * @apiVersion 1.0.0
+ * @api {get} users/:id Get User by ID
+ * @apiVersion 1.2.0
  * @apiName GetUserById
- * @apiGroup Users API
+ * @apiGroup User group
  *
  * @apiDescription
  * Returns the username for the user matching the given numeric
@@ -186,10 +186,10 @@
 
 
 /**
- * @api {post} {api_url}/api/users/login Kirjaudu sisään (Kubios)
- * @apiVersion 1.0.0
+ * @api {post} users/login Log In (Kubios)
+ * @apiVersion 1.2.0
  * @apiName PostLogin
- * @apiGroup Users API
+ * @apiGroup User group
  *
  * @apiDescription
  * Authenticates a user against the Kubios HRV service and issues a
@@ -247,10 +247,10 @@
 
 
 /**
- * @api {get} {api_url}/api/users/me Hae kirjautuneen käyttäjän tiedot
- * @apiVersion 1.0.0
+ * @api {get} users/me Get Logged-in Users Information
+ * @apiVersion 1.2.0
  * @apiName GetMe
- * @apiGroup Users API
+ * @apiGroup User group
  *
  * @apiDescription
  * Returns profile information for the currently authenticated user.

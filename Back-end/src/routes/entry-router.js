@@ -64,6 +64,8 @@ import { validationErrorHandler } from '../middlewares/error-handlers.js';
  *
  * ## Terms of Use / Contact
  * Free to use and distribute, contact joni.kaukinen@metropolia.fi for any information
+ *
+ * @apiGroup Entry group
  */
 
 const entryRouter = express.Router();

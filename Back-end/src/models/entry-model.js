@@ -5,10 +5,10 @@ import promisePool from '../utils/database.js';
  * @apiSuccess {Number}  entry_id      Auto-incremented primary key of the entry.
  * @apiSuccess {Number}  user_id       Foreign key referencing the owning user.
  * @apiSuccess {String}  entry_date    Date of the entry (YYYY-MM-DD, from MySQL DATE column).
- * @apiSuccess {Number}  [mood]        Mood rating stored as a numeric value. Valid range unspecified.
- * @apiSuccess {Number}  [weight]      Body weight. Unit (kg/lbs) and precision unspecified.
- * @apiSuccess {Number}  [sleep_hours] Hours of sleep. Precision (integer vs decimal) unspecified.
- * @apiSuccess {String}  [notes]       Free-text field, max length unspecified.
+ * @apiSuccess {Number}  [mood]        Mood rating stored as a numeric value. 50 characters long.
+ * @apiSuccess {Number}  [weight]      Body weight. Unit (Displayed as Kg in the client so preferrably that)
+ * @apiSuccess {Number}  [sleep_hours] Hours of sleep. Precision (integer)
+ * @apiSuccess {String}  [notes]       Free-text field.
  */
 
 /**
@@ -16,18 +16,18 @@ import promisePool from '../utils/database.js';
  * @apiSuccess {Number}  entry_id      Auto-incremented primary key of the entry.
  * @apiSuccess {Number}  user_id       Foreign key referencing the owning user.
  * @apiSuccess {String}  entry_date    Date of the entry (YYYY-MM-DD, from MySQL DATE column).
- * @apiSuccess {Number}  [mood]        Mood rating stored as a numeric value. Valid range unspecified.
- * @apiSuccess {Number}  [weight]      Body weight. Unit (kg/lbs) and precision unspecified.
- * @apiSuccess {Number}  [sleep_hours] Hours of sleep. Precision (integer vs decimal) unspecified.
- * @apiSuccess {String}  [notes]       Free-text field, max length unspecified.
+ * @apiSuccess {Number}  [mood]        Mood rating stored as a numeric value. 50 characters long.
+ * @apiSuccess {Number}  [weight]      Body weight. Unit (Displayed as Kg in the client so preferrably that)
+ * @apiSuccess {Number}  [sleep_hours] Hours of sleep. Precision (integer)
+ * @apiSuccess {String}  [notes]       Free-text field.
  */
 
 
 /**
- * @api {db} diaryentries/listAll List All Entries for a User
- * @apiVersion 1.0.0
+ * @api {db} entries/ List All Entries for a User
+ * @apiVersion 1.2.0
  * @apiName listAllEntries
- * @apiGroup EntryModel
+ * @apiGroup Entry group
  * @apiDescription Executes `SELECT * FROM diaryentries WHERE user_id = ?` using a
  *  parameterised prepared statement. Returns all diary entries belonging to `user_id`.
  *  Called internally by the `getEntries` controller.
@@ -71,10 +71,10 @@ const listAllEntries = async (user_id) => {
 };
 
 /**
- * @api {db} diaryentries/findById Find Entry by Primary Key
- * @apiVersion 1.0.0
+ * @api {db} entries/:id Find Entry by id
+ * @apiVersion 1.2.0
  * @apiName findEntryById
- * @apiGroup EntryModel
+ * @apiGroup Entry group
  * @apiDescription Executes `SELECT * FROM DiaryEntries WHERE entry_id = ?` using a
  *   parameterised prepared statement. Returns the first matching row, or `undefined`
  *   if no entry matches. No `user_id` filter is applied — ownership is not checked
@@ -120,19 +120,19 @@ const findEntryById = async (id) => {
 };
 
 /**
- * @api {db} DiaryEntries/insert Add New Entry
- * @apiVersion 1.0.0
+ * @api {db} entries/ Add New Entry
+ * @apiVersion 1.2.0
  * @apiName addEntry
- * @apiGroup EntryModel
+ * @apiGroup Entry group
  * @apiDescription Inserts a new row into the `DiaryEntries` table using a
  *   parameterised INSERT statement. Returns the auto-generated `entry_id` on success.
  *
  * @apiParam {Object} entry              Entry data object.
- * @apiParam {Number} entry.user_id      ID of the entry owner.
- * @apiParam {String} entry.entry_date   Date string (YYYY-MM-DD).
+ * @apiParam {Number} entry.user_id      ID of the entry owner. **Required**
+ * @apiParam {String} entry.entry_date   Date string (YYYY-MM-DD). **Required**
  * @apiParam {String} [entry.mood]       Mood rating (can be a number or text).
- * @apiParam {Number} [entry.weight]     Body weight (can be given as a float, but will round up or down to the nearest integer).
- * @apiParam {Number} [entry.sleep_hours] Hours of sleep (can be given as a float, but will round up or down to the nearest integer).
+ * @apiParam {Number} [entry.weight]     Body weight (can be given as a decimal number).
+ * @apiParam {Number} [entry.sleep_hours] Hours of sleep (can be given as a decimal number, but will round up or down to the nearest integer).
  * @apiParam {String} [entry.notes]      Free-text notes.
  *
  * @apiSuccess {Number} entry_id  The `insertId` of the newly created row.
@@ -143,7 +143,7 @@ const findEntryById = async (id) => {
  * @apiErrorExample {json} Resolved value (error):
  *   { "error": "ER_DUP_ENTRY: Duplicate entry for key 'PRIMARY'" }
  *
- * @apiDescription Optional fields (`mood`, `weight`, `sleep_hours`, `notes`) are passed
+ * @apiDescription Fields (`mood`, `weight`, `sleep_hours`, `notes`) are passed
  *  directly to the parameterised query even when `undefined`. MySQL will store
  *  `NULL` for undefined values — ensure the table columns are nullable.
  *  The queries should match specifically what table names are set in SQL,
@@ -165,10 +165,10 @@ const addEntry = async (entry) => {
 };
 
 /**
- * @api {db} diaryEntries/delete Remove Entry by ID and User
- * @apiVersion 1.0.0
+ * @api {db} entries/delete Remove Entry by ID and User
+ * @apiVersion 1.2.0
  * @apiName removeEntryById
- * @apiGroup EntryModel
+ * @apiGroup Entry group
  * @apiDescription Executes `DELETE FROM DiaryEntries WHERE entry_id = ? AND user_id = ?`
  *   using a parameterised statement. Combines both `entryId` and `userId` to prevent
  *   users from deleting entries that belong to others.

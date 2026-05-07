@@ -1,4 +1,127 @@
  /**
+ * @apiDefine KubiosGroup Authentication
+ * Authentication endpoints using Kubios API as the identity provider.
+ * Users authenticate via Kubios credentials and receive a local JWT token
+ * for subsequent requests.
+ */
+
+ /**
+ * @apiDefine KubiosAuthError
+ * @apiError (401) KubiosAuthFailed Bad username or password provided to Kubios.
+ * @apiError (500) KubiosLoginError Kubios API request failed unexpectedly.
+ * @apiError (500) KubiosUserInfoError Failed to retrieve user info from Kubios API.
+ * @apiErrorExample {json} 401-Unauthorized:
+ *     HTTP/1.1 401 Unauthorized
+ *     {
+ *       "message": "Login with Kubios failed due bad username/password"
+ *     }
+ * @apiErrorExample {json} 500-Internal-Server-Error:
+ *     HTTP/1.1 500 Internal Server Error
+ *     {
+ *       "message": "Login with Kubios failed"
+ *     }
+ */
+
+  /**
+ * @api {post} kubios/login
+ * @apiVersion 1.2.0
+ * @apiName PostLogin
+ * @apiGroup Kubios group
+ *
+ * @apiDescription Authenticates a user via the Kubios API using their Kubios
+ * credentials. On success, the user is synced with the local database
+ * (created if not yet present) and a signed local JWT token is returned.
+ * This JWT must be included in the Authorization header as a Bearer token
+ * for all protected endpoints.
+ *
+ * Authentication flow:
+ * 1. Sends credentials to Kubios login URL using CSRF + User-Agent headers.
+ * 2. Parses the redirect location header for the Kubios id_token.
+ * 3. Uses id_token to fetch the Kubios user profile (/user/self).
+ * 4. Syncs the Kubios user with the local database by email.
+ * 5. Signs and returns a local JWT embedding the local user ID and
+ *    the Kubios id_token for downstream Kubios API calls.
+ *
+ * @apiHeader {String} Content-Type application/json
+ *
+ * @apiBody {String} username Kubios-tilin käyttäjätunnus (sähköpostiosoite).
+ * @apiBody {String} password Kubios-tilin salasana.
+ *
+ * @apiParamExample {json} Request-Body-Example:
+ *     {
+ *       "username": "kayttaja@example.com",
+ *       "password": "salasana123"
+ *     }
+ *
+ * @apiSuccess {String}   message         Confirmation message.
+ * @apiSuccess {Object}   user            Kubios user profile object.
+ * @apiSuccess {String}   user.email      Käyttäjän sähköpostiosoite.
+ * @apiSuccess {String}   [user.name]     Käyttäjän nimi (jos saatavilla Kubios-profiilista).
+ * @apiSuccess {Number}   user_id         Local database user ID.
+ * @apiSuccess {String}   token           Signed JWT token for authenticating future requests.
+ *
+ * @apiSuccessExample {json} 200-Success:
+ *     HTTP/1.1 200 OK
+ *     {
+ *       "message": "Logged in successfully with Kubios",
+ *       "user": {
+ *         "email": "kayttaja@example.com",
+ *         "name": "Matti Meikäläinen"
+ *       },
+ *       "user_id": 42,
+ *       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+ *     }
+ *
+ * @apiUse KubiosAuthError
+ */
+
+  /**
+ * @api {get} users/me
+ * @apiVersion 1.2.0
+ * @apiName GetMe
+ * @apiGroup Kubios group
+ *
+ * @apiDescription Returns the local database profile of the currently
+ * authenticated user and their active Kubios id_token. The user is identified
+ * from the JWT payload. The returned kubios_token can be inspected for
+ * debugging but is not meant to be used directly by the client — it is
+ * handled server-side when proxying Kubios API requests.
+ *
+ * @apiHeader {String} Authorization Bearer {token}
+ *
+ * @apiSuccess {Object}   user              Local database user object.
+ * @apiSuccess {Number}   user.user_id      Käyttäjän paikallinen tietokanta-ID.
+ * @apiSuccess {String}   user.email        Käyttäjän sähköpostiosoite.
+ * @apiSuccess {String}   user.username     Käyttäjätunnus paikallisessa tietokannassa.
+ * @apiSuccess {String}   kubios_token      Active Kubios id_token embedded in the current JWT.
+ *
+ * @apiSuccessExample {json} 200-Success:
+ *     HTTP/1.1 200 OK
+ *     {
+ *       "user": {
+ *         "user_id": 42,
+ *         "username": "kayttaja@example.com",
+ *         "email": "kayttaja@example.com"
+ *       },
+ *       "kubios_token": "eyJraWQiOiJLdWJpb3MtaWR0b2tlbi..."
+ *     }
+ *
+ * @apiError (401) Unauthorized Missing or invalid JWT token.
+ * @apiErrorExample {json} 401-Unauthorized:
+ *     HTTP/1.1 401 Unauthorized
+ *     {
+ *       "message": "Invalid or missing token"
+ *     }
+ *
+ * @apiError (404) UserNotFound User ID from token not found in local database.
+ * @apiErrorExample {json} 404-Not-Found:
+ *     HTTP/1.1 404 Not Found
+ *     {
+ *       "message": "User not found"
+ *     }
+ */
+
+ /**
   * Authentication resource controller using Kubios API for login
  * @module controllers/auth-controller
  * @author
@@ -15,8 +138,7 @@
  import jwt from 'jsonwebtoken';
  import fetch from 'node-fetch';
  import {v4} from 'uuid';
-//  import {customError} from '../middlewares/error-handlers.js';
-// No custom errors to use.
+
  import {
    addUser,
    selectUserByEmail,
@@ -25,6 +147,7 @@
 
  // Kubios API base URL should be set in .env
  const baseUrl = process.env.KUBIOS_API_URI;
+
 
  /**
  * Creates a POST login request to Kubios API

@@ -13,10 +13,10 @@ import promisePool from '../utils/database.js';
 
 
 /**
- * @api {get} {api_url}/api/users [Model] Hae kaikki käyttäjät
- * @apiVersion 1.0.0
+ * @api {get} users [Model] Get All Users
+ * @apiVersion 1.2.0
  * @apiName ModelGetUsers
- * @apiGroup ModelGroup
+ * @apiGroup User group
  * @apiPrivate
  *
  * @apiDescription
@@ -55,10 +55,10 @@ const getUsers = async () => {
 };
 
 /**
- * @api {get} {api_url}/api/users/:id [Model] Hae käyttäjä ID:llä
- * @apiVersion 1.0.0
+ * @api {get} users/:id [Model] Get User by ID
+ * @apiVersion 1.2.0
  * @apiName ModelGetUserById
- * @apiGroup ModelGroup
+ * @apiGroup User group
  * @apiPrivate
  *
  * @apiDescription
@@ -96,10 +96,10 @@ const getUserbyId = async (id) => {
 };
 
 /**
- * @api {post} {api_url}/api/users [Model] Lisää uusi käyttäjä
- * @apiVersion 1.0.0
+ * @api {post} users [Model] Add New User
+ * @apiVersion 1.2.0
  * @apiName ModelAddUser
- * @apiGroup ModelGroup
+ * @apiGroup User group
  * @apiPrivate
  *
  * @apiDescription
@@ -145,10 +145,10 @@ const addUser = async (user) => {
 }
 
 /**
- * @api {get} {api_url}/api/users?username=:username [Model] Hae käyttäjä käyttäjänimellä
- * @apiVersion 1.0.0
+ * @api {get} users?username=:username [Model] Get User by Username
+ * @apiVersion 1.2.0
  * @apiName ModelFindUserByUsername
- * @apiGroup ModelGroup
+ * @apiGroup User group
  * @apiPrivate
  *
  * @apiDescription
@@ -189,10 +189,10 @@ const findUserByUsername = async (username) => {
 };
 
 /**
- * @api {get} {api_url}/api/users?email=:email [Model] Hae käyttäjä sähköpostilla
- * @apiVersion 1.0.0
+ * @api {get} users?email=:email [Model] Get User by Email
+ * @apiVersion 1.2.0
  * @apiName ModelSelectUserByEmail
- * @apiGroup ModelGroup
+ * @apiGroup User group
  * @apiPrivate
  *
  * @apiDescription
