@@ -24,7 +24,7 @@ Metropolia AMK:n Hyvinvointi- ja terveysteknologian RYHMÄ 3 ryhmätyö kevät 2
 
 ## Tietokanta
 
-> *kuva rakenteesta*
+> <img alt="Database.jpg" href="https://github.com/LoberMoo/Opiskelijan-UniHelper/blob/main/Front-end/src/img/database.jpg">
 
 ## Toiminnallisuudet
 
