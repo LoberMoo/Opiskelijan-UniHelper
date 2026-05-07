@@ -56,3 +56,6 @@ Automaatiotestit on toteutettu Robot Frameworkilla.
 - [Kubios Cloud API](https://www.kubios.com/kubios-cloud/)
 - [Robot Framework](https://robotframework.org/)
 - [Chart.js](https://www.chartjs.org/docs/latest/)
+- [apiDoc](https://apidocjs.com/)
+  HUOM: Apidokumentaatioon sovelluksen Back-end osiossa on käytetty Anthropic:in Claude Sonnet 4.6 tekoäly mallia annotaatioiden luontiin.
+  Olemme käsin käynyt läpi suuremman osan tekoälyn tuottamasta tekstistä, tehnyt omia muutoksia tarvittaessa ja muuttanut rakennetta.
