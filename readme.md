@@ -55,3 +55,4 @@ Automaatiotestit on toteutettu Robot Frameworkilla.
 
 - [Kubios Cloud API](https://www.kubios.com/kubios-cloud/)
 - [Robot Framework](https://robotframework.org/)
+- [Chart.js](https://www.chartjs.org/docs/latest/)
