@@ -6,7 +6,7 @@ Metropolia AMK:n Hyvinvointi- ja terveysteknologian RYHMÄ 3 ryhmätyö kevät 2
 
 - **Front-end:** [linkki]
 - **Back-end API:** [linkki]
-- **API-dokumentaatio:** [linkki](https://github.com/LoberMoo/Opiskelijan-UniHelper/blob/main/Back-end/docs/index.html)
+- **API-dokumentaatio:** [linkki](https://lobermoo.github.io/Opiskelijan-UniHelper/)
 
 ## Kuvakaappaukset
 
