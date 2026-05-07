@@ -35,8 +35,8 @@ report.html
 playwright-log.txt
 .venv/
 # Outputs: ignoroi binäärit mutta salli HTML-raportit
-outputs/*.xml
-!outputs/*.html
+tests/docs/*/*.xml
+!tests/docs/*/*.html
 outputs/browser/
 src/assets/saavutettavuus
 src/testaus

@@ -8,7 +8,7 @@ Sovelluksen testausta varten yritämme luoda mahdollisimman monelle tärkeälle 
 Tämän hetkiset käyttötapaukset joita on testattu ja joista on testejä ovat:<br>
 - Kirjautuminen
 - Olotilan merkkaaminen
-- Rekisteröityminen.
+- Päiväkirjamerkin lisäys.
 <br>
 <br>
 Koitamme tulevaisuudessa tehdä lisää automaatio testejä sovellusta varten.
