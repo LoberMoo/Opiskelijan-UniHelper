@@ -4,9 +4,9 @@ Metropolia AMK:n Hyvinvointi- ja terveysteknologian RYHMÄ 3 ryhmätyö kevät 2
 
 ## Linkki sovellukseen
 
-- **Front-end:** [linkki](https://github.com/LoberMoo/Opiskelijan-UniHelper/tree/main/Front-end)
-- **Back-end API:** [linkki](https://github.com/LoberMoo/Opiskelijan-UniHelper/tree/main/Back-end)
-- **API-dokumentaatio:** [linkki](https://lobermoo.github.io/Opiskelijan-UniHelper/)
+- **Front-end:** [https://github.com/LoberMoo/Opiskelijan-UniHelper/tree/main/Front-end]
+- **Back-end API:** [https://github.com/LoberMoo/Opiskelijan-UniHelper/tree/main/Back-end]
+- **API-dokumentaatio:** [https://lobermoo.github.io/Opiskelijan-UniHelper/]
 
 ## Kuvakaappaukset
 
@@ -24,7 +24,7 @@ Metropolia AMK:n Hyvinvointi- ja terveysteknologian RYHMÄ 3 ryhmätyö kevät 2
 
 ## Tietokanta
 
-> <img alt="Database.jpg" src="https://github.com/LoberMoo/Opiskelijan-UniHelper/blob/main/Front-end/src/img/database.jpg" />
+> *<img alt="Database.jpg" src="https://github.com/LoberMoo/Opiskelijan-UniHelper/blob/main/Front-end/src/img/database.jpg" />*
 
 ## Toiminnallisuudet
 
