@@ -1,21 +1,21 @@
 # Päävalikko Opiskelijan-UniHelperin dokumenttejä varten
 
-<a href="https://github.com/LoberMoo/Opiskelijan-UniHelper/tree/main/docs/apidoc/index.html">Apidoc</a>
+<a href="https://lobermoo.github.io/Opiskelijan-UniHelper/apidoc/index.html">Apidoc</a>
 <br>
 <br>
 <br>
 Automaatiotestaus logit ja raportit löytyvät näistä linkeistä:
 <br>
 
-<a href="https://github.com/LoberMoo/Opiskelijan-UniHelper/blob/main/Front-end/tests/docs/testaussuunnitelma.md">Testaussuunnitelma</a>
+<a href="https://lobermoo.github.io/Opiskelijan-UniHelper/Front-end/tests/docs/testausuunnitelma.md">Testaussuunnitelma</a>
 <br>
 Automaatiotestit:
 <br>
 
-[login](https://github.com/LoberMoo/Opiskelijan-UniHelper/tree/main/docs/login-test/report.html)
+<a href="https://lobermoo.github.io/Opiskelijan-UniHelper/login-test/report.html">Login test</a>
 <br>
 
-[olotila](https://github.com/LoberMoo/Opiskelijan-UniHelper/tree/main/docs/olotila-test/report.html)
+<a href="https://lobermoo.github.io/Opiskelijan-UniHelper/olotila-test/report.html">Olotila test</a>
 <br>
 
-[entry](https://github.com/LoberMoo/Opiskelijan-UniHelper/tree/main/docs/entry-test/report.html)
+<a href="https://lobermoo.github.io/Opiskelijan-UniHelper/entry-test/report.html">Entry test</a>
